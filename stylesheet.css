@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   background-color: skyblue;
   widows: 100%;
@@ -68,3 +69,14 @@ body {
   font-size: 72%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+=======
+.container{
+    margin: 0 auto;
+    display: block;
+}
+
+.container .nav{
+    display: flex;
+    margin: 0 auto;
+}
+>>>>>>> 094aaf29888a899031de658ec976126eec3324cc
