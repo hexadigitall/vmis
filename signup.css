@@ -24,7 +24,7 @@ body {
 .container .textContent .titleText h1 {
   color: #ffffff;
   font-size: 150%;
-  font-family: "Varela Round", sans-serif;
+  font-family: "GlacialIndifferenceRegular";
 }
 .container .textContent .titleText h3 {
   background-color: #ffffff;
@@ -33,7 +33,7 @@ body {
   padding: 10px;
   border-radius: 5pt;
   font-size: 72%;
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "GlacialIndifferenceRegular", Arial, sans-serif;
 }
 
 nav {
