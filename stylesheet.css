@@ -49,6 +49,11 @@ body {
   width: 70px;
   margin-left: 5px;
 }
+
+.container .navbar #faq:hover {
+  color: white;
+  background-color: black;
+}
 .container .navbar #search {
   width: 300px;
   height: 45px;
