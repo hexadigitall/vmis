@@ -4,9 +4,11 @@ body {
   height: 100%;
 }
 .container {
+  padding: 70px 0;
+  text-align: center;
   margin: 0 auto;
   width: 70%;
-  border: 1px solid black;
+  border: none
 }
 .container .navbar {
   display: flex;
@@ -36,11 +38,11 @@ body {
   width: 70px;
 }
 .container .navbar #search {
-  width: 250px;
-  height: 35px;
+  width: 300px;
+  height: 45px;
   margin-top: 3%;
   padding-left: 10px;
-  border-radius: 5pt;
+  border-radius: 1pt;
 }
 
 .container .textContent {
@@ -57,14 +59,14 @@ body {
 .container .textContent .titleText h1 {
   color: #ffffff;
   font-size: 150%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Tahoma, sans-serif;
 }
 .container .textContent .titleText h3 {
   background-color: #ffffff;
   width: 50%;
   margin: 0 auto;
-  padding: 10px;
-  border-radius: 5pt;
+  padding: 20px;
+  border-radius: 1pt;
   font-size: 72%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
