@@ -33,6 +33,7 @@ body {
   font-weight: normal;
   font-family:'Alef', sans-serif;
   color: #c8d0d8;
+  margin-right: 5px;
 }
 .container .navbar #faq {
   border-radius: 50%;
@@ -41,6 +42,7 @@ body {
   font-weight: normal;
   color: #c8d0d8;
   width: 70px;
+  margin-left: 5px;
 }
 .container .navbar #search {
   width: 300px;
