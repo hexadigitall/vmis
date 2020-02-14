@@ -32,6 +32,7 @@ body {
   font-size: 100%;
   font-weight: bold;
   text-transform: uppercase;
+  margin-right: 5px;
 }
 .container .navbar #faq {
   border-radius: 50%;
@@ -39,6 +40,7 @@ body {
   font-size: 100%;
   font-weight: bold;
   width: 70px;
+  margin-left: 5px;
 }
 .container .navbar #search {
   width: 300px;
