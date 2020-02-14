@@ -61,6 +61,9 @@ body {
   padding-left: 10px;
   border-radius: 1pt;
 }
+input:focus::placeholder {
+  color: transparent;
+}
 
 .container .textContent {
   text-align: center;

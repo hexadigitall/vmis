@@ -28,11 +28,12 @@ body {
 }
 .container .textContent .titleText h3 {
   background-color: #ffffff;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   padding: 10px;
-  border-radius: 5pt;
+  border-radius: 1pt;
   font-size: 72%;
+  color: #53af9e;
   font-family: "GlacialIndifferenceRegular", Arial, sans-serif;
 }
 
