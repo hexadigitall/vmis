@@ -61,7 +61,7 @@ li a {
   color: #ffffff;
   border-radius: 5px;
   text-decoration: none;
-  font-family:'Alef', sans-serif;
+  font-family: "Alef", sans-serif;
 }
 li a:hover {
   background-color: #111;
@@ -118,4 +118,9 @@ li .active:hover {
   margin-top: 4%;
   border: none;
   border-radius: 5px;
+}
+
+.container form .register:hover {
+  color: white;
+  background-color: black;
 }
