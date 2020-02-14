@@ -30,14 +30,16 @@ body {
   height: 70px;
   border-radius: 5pt;
   font-size: 100%;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-weight: normal;
+  font-family:'Alef', sans-serif;
+  color: #c8d0d8;
 }
 .container .navbar #faq {
   border-radius: 50%;
-  font-family: sans-serif;
+  font-family: 'Alef', sans-serif;
   font-size: 100%;
-  font-weight: bold;
+  font-weight: normal;
+  color: #c8d0d8;
   width: 70px;
 }
 .container .navbar #search {
@@ -57,12 +59,12 @@ body {
   margin: 0 auto;
   background-color: #9eb8cd;
   width: 50%;
-  border: 3px solid #ffffff;
+  border: 5px solid #ffffff;
 }
 .container .textContent .titleText h1 {
   color: #ffffff;
   font-size: 150%;
-  font-family: Verdana, Tahoma, sans-serif;
+  font-family: 'GlacialIndifferenceRegular';
 }
 .container .textContent .titleText h3 {
   background-color: #ffffff;
@@ -71,5 +73,6 @@ body {
   padding: 20px;
   border-radius: 1pt;
   font-size: 72%;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #53af9e;
+  font-family: 'GlacialIndifferenceRegular', Arial, sans-serif;
 }

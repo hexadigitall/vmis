@@ -61,7 +61,7 @@ li a {
   color: #ffffff;
   border-radius: 5px;
   text-decoration: none;
-  font-family: "Varela Round", sans-serif;
+  font-family:'Alef', sans-serif;
 }
 li a:hover {
   background-color: #111;
