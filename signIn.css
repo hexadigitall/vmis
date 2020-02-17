@@ -6,7 +6,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
 }
 
 .container .textContent {
@@ -74,13 +74,30 @@ li .active {
 li .active:hover {
   color: #ffffff;
 }
-.container form {
-  width: 30%;
-  margin: 0 auto;
+.acct_box{
+  display: flex;
+  justify-content: center;
+}
+.container .acct_box form {
+  width: 18%;
   background-color: #ffffff;
-  margin-top: 3%;
+  margin: 5px;
   padding: 3%;
+  margin-top: 3%;
   border-radius: 7px;
+}
+.container .acct_box form h1{
+  color: #000000;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14pt;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container .acct_box form span{
+  font-size: 20px;
+  align-self: center;
+  margin-right: 3%;
 }
 .container form label {
   font-family: "Righteous", cursive;
@@ -95,6 +112,7 @@ li .active:hover {
   margin: 1%;
   height: 30px;
   padding-left: 5px;
+  border-radius: 7px;
 }
 .container form #phone {
   width: 100%;
