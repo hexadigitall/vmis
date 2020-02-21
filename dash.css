@@ -1,0 +1,159 @@
+:root {
+  --page-backgroundColor: #f4f6f9;
+  --page-header-bgColor: #fff;
+  --page-sideMenu-active: #1d2636;
+  --page-sideSelectedMenu-active: #92cf48;
+  --page-header-bgColor-hover: #1d2636;
+  --page-heading-txtColor: #156bd4;
+  --page-paragraph-txtColor: #05172e;
+  --page-sideMenuColor: #7889a4;
+  --page-header-width: 220px;
+  --page-content-bgColor: #f0f1f6;
+  --page-content-txtColor: #171616;
+  --white: #fff;
+  --black: #333;
+  --blue: #00b9eb;
+  --red: #ec1848;
+  --border-radius: 4px;
+  --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-backgroundColor);
+}
+
+/* .headerMenu {
+  background-color: var(--page-header-bgColor);
+} */
+
+#sideMenu {
+  background-color: var(--page-sideMenuColor);
+  max-width: 280px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+#sideMenu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 25px 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+#sideMenu fa {
+  color: greenyellow;
+  font-size: 1.4rem;
+  margin-right: 0.8rem;
+}
+
+nav {
+  padding-top: 80px;
+}
+#sideMenu a.active {
+  background-color: var(--page-sideMenu-active);
+  border-left: 5px solid var(--page-sideSelectedMenu-active);
+  padding: 25px 30px 15px 25px;
+}
+
+header {
+  background-color: var(--page-header-bgColor);
+  margin-left: 280px;
+  padding: 20px;
+}
+
+.header-heading {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: navy;
+}
+
+.header-heading h1 {
+  text-align: center;
+}
+
+#contentArea {
+  margin-left: 280px;
+  padding: 15px;
+}
+
+#contentArea .heading {
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: var(--page-heading-txtColor);
+  margin-bottom: 10px;
+}
+
+#contentArea p {
+  font-size: 0.9rem;
+  color: var(--page-paragraph-txtColor);
+}
+
+/* .dashBoxes {
+  background-color: ;
+} */
+
+.dashBoxes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.dashContent {
+  width: 45%;
+  height: 140px;
+  margin-top: 20px;
+  padding: 10px 0 0 15px;
+}
+
+.icons {
+  color: white;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+}
+
+.dashContent h1 {
+  padding-top: 40px;
+  font-size: 2.2rem;
+}
+/* .dashContent .boxWriteup p {
+  color: white;
+} */
+.box1 {
+  background-color: rgb(52, 176, 233);
+  display: flex;
+}
+.box2 {
+  background-color: rgb(212, 134, 16);
+  display: flex;
+}
+.box3 {
+  background-color: rgb(235, 238, 58);
+  display: flex;
+}
+.box4 {
+  background-color: rgb(151, 218, 17);
+  display: flex;
+}
+.box5 {
+  background-color: rgb(238, 9, 20);
+  display: flex;
+}
+.box6 {
+  background-color: rgb(240, 59, 164);
+  display: flex;
+}
