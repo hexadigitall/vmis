@@ -138,22 +138,14 @@ header {
   display: flex;
 }
 .box2 {
-  background-color: rgb(212, 134, 16);
-  display: flex;
-}
-.box3 {
   background-color: rgb(235, 238, 58);
   display: flex;
 }
-.box4 {
+.box3 {
   background-color: rgb(151, 218, 17);
   display: flex;
 }
-.box5 {
+.box4 {
   background-color: rgb(238, 9, 20);
-  display: flex;
-}
-.box6 {
-  background-color: rgb(240, 59, 164);
   display: flex;
 }
