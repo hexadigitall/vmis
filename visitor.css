@@ -1,0 +1,124 @@
+body{
+    background-color: #dcf0fa;
+}
+.container{
+    background-color: #9eb8cd;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2%;
+    display: block;
+}
+.container .form_box{
+    background-color: #9eb8cd;
+    margin: 0 auto;
+    border: 3px solid #ffffff;
+    padding: 2%;
+}
+.container .form_box input{
+    width: 100%;
+    border: none;
+    background-color: #ffffff;
+    margin: 5px;
+    padding: 3px;
+    margin-bottom: 13px;
+}
+.container .form_box label{
+    font-family: cursive;
+    font-size: 11pt;
+}
+
+
+.container .form_box .card_content{
+    width: 100%;
+    float: left;
+}
+.container .form_box .card_content #card_no{
+    width: 15%;
+}
+.container .form_box .card_content select{
+    width: 25%;
+    border: none;
+    background-color: #ffffff;
+    padding: 3px;
+}
+.container .form_box .card_content #full_name{
+    width: 35%;
+}
+
+
+.container .form_box .card_content_two{
+    width: 100%;
+    float: left;
+}
+.container .form_box .card_content_two select{
+    background-color: #ffffff;
+    border: none;
+    padding: 3px;
+}
+.container .form_box .card_content_two #phone_no{
+    width: 20%;
+}
+
+.container .form_box .card_content_three{
+    width: 100%;
+    float: left;
+}
+.container .form_box .card_content_three input{
+    width: 23.5%;
+    padding: 5px;
+}
+.container .form_box .card_content_four{
+    width: 100%;
+    float: left;
+}
+.container .form_box .card_content_four input{
+    width: 29.5%;
+    padding: 5px;
+    background-color: #ffffff;
+}
+.container .form_box .card_content_four #date{
+    width: 10%;
+    background-color: #ffffff;
+}
+.container .form_box .card_content_five{
+    width: 100%;
+    float: left;
+}
+.container .form_box .card_content_five input{
+    width: 15%;
+} 
+.container .form_box .card_content_five #checked{
+    width: 40px;
+    background-color: #ffffff;
+    border: none;
+}
+.container .form_box button{
+    width: 10%;
+    height: 30px;
+    border: none;
+    background-color:#15b2d1 ;
+    color: #ffffff;
+    border-radius: 5px;
+}
+.container .form_box button:hover{
+    cursor: pointer;
+    background-color: #000000;
+}
+
+
+
+
+
+/* .container .form_box .small_input{
+    width: 50%;
+}
+.container .form_box #checked{
+    width: 3%;
+}
+.container .form_box select{
+    border: none;
+    background-color: #ffffff;
+    padding: 3px;
+    border-radius: 5px;
+    margin-left: 5px;
+} */
