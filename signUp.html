@@ -32,35 +32,14 @@
           <li class="links"><a href="events.html">Events</a></li>
         </ul>
       </nav>
-      <form action="signUp.html" method="">
-        <label>First Name</label>
-        <input type="text" name="" id="firstN" placeholder="First Name" />
-        <label>Last Name</label>
-        <input type="text" name="" id="secondN" placeholder="Last Name" />
-        <label for="">Phone</label>
-        <input type="text" placeholder="Phone" id="phone" />
-        <label>Email Address</label>
-        <input type="email" name="" id="email" placeholder="Email" />
-        <label>Password</label>
-        <input type="password" name="" id="pass" placeholder="password" />
-        <button type="button" class="register">Register</button>
-      </form>
-    </div>
-    <nav>
-      <ul>
-        <li class="links"><a href="index.html"><i class="fas fa-home"></i></a></li>
-        <li class="links"><a href="signIn.html">Sign In</a></li>
-        <li class="links"><a href="signUp.html" class="active">Sign Up</a></li>
-        <li class="links"><a href="events.html">Events</a></li>
-      </ul>
-    </nav>
+      
     <form action="signUp.php" method="POST">
-      <label for="">Phone</label>
-      <input type="text" placeholder="Phone" id="phone" name="phoneNo" />
       <label>First Name</label>
       <input type="text" name="" id="firstN" placeholder="First Name" name="firstN" />
       <label>Last Name</label>
       <input type="text" name="" id="secondN" placeholder="Last Name" name="secondN" />
+      <label for="">Phone</label>
+      <input type="text" placeholder="Phone" id="phone" name="phoneNo" />
       <label>Email Address</label>
       <input type="email" name="" id="email" placeholder="Email" name="email" />
       <label>Password</label>
@@ -68,6 +47,62 @@
       <button type="submit" class="register">Register</button>
     </form>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script type="text/javascript">
+	$(function(){
+		$('#register').click(function(e){
+
+			var valid = this.form.checkValidity();
+
+			if(valid){
+
+
+			var firstname 	= $('#firstname').val();
+			var lastname	= $('#lastname').val();
+			var email 		= $('#email').val();
+			var phonenumber = $('#phonenumber').val();
+			var password 	= $('#password').val();
+			
+
+				e.preventDefault();	
+
+				$.ajax({
+					type: 'POST',
+					url: 'process.php',
+					data: {firstname: firstname,lastname: lastname,email: email,phonenumber: phonenumber,password: password},
+					success: function(data){
+					Swal.fire({
+								'title': 'Successful',
+								'text': data,
+								'type': 'success'
+								})
+							
+					},
+					error: function(data){
+						Swal.fire({
+								'title': 'Errors',
+								'text': 'There were errors while saving the data.',
+								'type': 'error'
+								})
+					}
+				});
+
+				
+			}else{
+				
+			}
+
+			
+
+
+
+		});		
+
+		
+	});
+	
+</script>
 </body>
 
 </html>

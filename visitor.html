@@ -18,14 +18,18 @@
         <div class="title">Visitor's Form</div>
       <div class="form_box">
             <form action="visitor.html" method="POST">
-               <div class="card_content"> <label for="card_no">Card No<i class="fas fa-id-card-alt"></i></label><input required name="card_No" type="text" placeholder="Card No" id="card_no">
-                <label for="card_Type">Card Type</label><select required name="card_Type" id="card_Type">
+               <div class="card_content">
+                 <label for="card_no">Card No<i class="fas fa-id-card-alt"></i></label>
+                 <input required name="card_No" type="text" placeholder="Card No" id="card_no">
+                 <label for="card_Type">Card Type</label>
+                 <select required name="card_Type" id="card_Type">
                     <option>--Select Card Type --</option>
                     <option value="Open Cafe">Open Cafe</option>
                     <option value="Co-Work">Co-Work</option>
+                    <option value="Lessee">Lessee</option>
                     <option value="Admin">Admin</option>
-                </select>
-                <label for="full_Name">Full Name</label> <input required name="full_Name" type="text" placeholder="Full Name" id="full_name">
+                </select><br>
+                <label for="full_Name">Full Name</label><input required name="full_Name" type="text" placeholder="Full Name" id="full_name">
             </div>
             
             
@@ -33,7 +37,7 @@
                     <option value="">-- Select Gender --</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Others">Others</option>
+                    <option value="Other">Others</option>
                 </select>
                 <label for="phone_no">Phone No <i class="fas fa-phone-square-alt"></i></label><input required class="small_input" type="text" name="phone_No" placeholder="Phone No" id="phone_no">
                 <label for="onAppointment">On Appointment</label> <select required name="onAppointment" id="onAppointment">
