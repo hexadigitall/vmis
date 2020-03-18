@@ -76,49 +76,38 @@ li .active:hover {
   color: #ffffff;
 }
 .container form {
-  width: 30%;
-  margin: 0 auto;
+  width: 40%;
   background-color: #ffffff;
-  margin-top: 3%;
+  margin: 0 auto;
+  margin-top: 2%;
   padding: 3%;
-  border-radius: 7px;
-}
-.container form label {
-  font-family: "Righteous", cursive;
-  font-size: 12px;
-  font-weight: bold;
   text-align: left;
-  padding-top: 5%;
 }
-.container form input {
-  background-color: #e5e2e2;
+.container form label{
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  font-size: 10pt;
+
+}
+.container form input{
+  width: 100%;
+  background-color: #afadad;
   border: none;
-  margin: 1%;
-  height: 30px;
-  padding-left: 5px;
-}
-.container form #phone {
-  width: 100%;
-}
-.container form #firstN,
-#secondN {
-  width: 100%;
-}
-.container form #email {
-  width: 100%;
-}
-.container form #pass {
-  width: 100%;
+  padding: 2%;
+  border-radius: 5px;
+  
 }
 .container form .register {
   background-color: #15b2d1;
   color: #ffffff;
-  height: 40px;
-  width: 70px;
+  height: 30px;
+  width: 30%;
   margin: 0 auto;
   margin-top: 4%;
   border: none;
   border-radius: 5px;
+  text-align: center;
 }
 
 .container form .register:hover {

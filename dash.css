@@ -65,6 +65,11 @@ nav {
   padding: 25px 30px 15px 25px;
 }
 
+#sideMenu a:hover{
+  background-color: var(--page-sideMenu-active);
+  border-left: 5px solid var(--page-sideSelectedMenu-active);
+}
+
 header {
   background-color: var(--page-header-bgColor);
   margin-left: 280px;
