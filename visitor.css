@@ -1,17 +1,166 @@
 body{
     background-color: #dcf0fa;
 }
+:root {
+  --page-backgroundColor: #f4f6f9;
+  --page-header-bgColor: #fff;
+  --page-sideMenu-active: #1d2636;
+  --page-sideSelectedMenu-active: #92cf48;
+  --page-header-bgColor-hover: #1d2636;
+  --page-heading-txtColor: #156bd4;
+  --page-paragraph-txtColor: #05172e;
+  --page-sideMenuColor: #7889a4;
+  --page-header-width: 220px;
+  --page-content-bgColor: #f0f1f6;
+  --page-content-txtColor: #171616;
+  --white: #fff;
+  --black: #333;
+  --blue: #00b9eb;
+  --red: #ec1848;
+  --border-radius: 4px;
+  --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-backgroundColor);
+}
+
+ .headerMenu {
+  background-color: var(--page-header-bgColor);
+} 
+
+#sideMenu {
+  background-color: var(--page-sideMenuColor);
+  max-width: 280px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+#sideMenu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 25px 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+#sideMenu fa {
+  color: greenyellow;
+  font-size: 1.4rem;
+  margin-right: 0.8rem;
+}
+
+nav {
+  padding-top: 80px;
+}
+#sideMenu a.active {
+  background-color: var(--page-sideMenu-active);
+  border-left: 5px solid var(--page-sideSelectedMenu-active);
+  padding: 25px 30px 15px 25px;
+}
+
+header {
+  background-color: var(--page-header-bgColor);
+  margin-left: 280px;
+  padding: 20px;
+}
+
+.header-heading {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: navy;
+}
+
+.header-heading h1 {
+  text-align: center;
+}
+
+#contentArea {
+  margin-left: 280px;
+  padding: 15px;
+}
+
+#contentArea .heading {
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: var(--page-heading-txtColor);
+  margin-bottom: 10px;
+}
+
+#contentArea p {
+  font-size: 0.9rem;
+  color: var(--page-paragraph-txtColor);
+}
+
+/* .dashBoxes {
+  background-color: ;
+} */
+
+.dashBoxes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.dashContent {
+  width: 45%;
+  height: 140px;
+  margin-top: 20px;
+  padding: 10px 0 0 15px;
+}
+
+.icons {
+  color: white;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+}
+
+.dashContent h1 {
+  padding-top: 40px;
+  font-size: 2.2rem;
+}
+
+.box1 {
+  background-color: rgb(52, 176, 233);
+  display: flex;
+}
+.box2 {
+  background-color: rgb(235, 238, 58);
+  display: flex;
+}
+.box3 {
+  background-color: rgb(151, 218, 17);
+  display: flex;
+}
+.box4 {
+  background-color: rgb(238, 9, 20);
+  display: flex;
+}
+
 .container{
+    margin-top: 15px;
     background-color: #9eb8cd;
-    margin: 0 auto;
     overflow: hidden;
-    padding: 2%;
     display: block;
+    height: 100%;
 }
 .container .form_box{
     background-color: #9eb8cd;
     margin: 0 auto;
-    border: 3px solid #ffffff;
     padding: 2%;
 }
 .container .form_box input{
@@ -33,16 +182,16 @@ body{
     float: left;
 }
 .container .form_box .card_content #card_no{
-    width: 15%;
+    width: 50%;
 }
 .container .form_box .card_content select{
-    width: 25%;
+    width: 30%;
     border: none;
     background-color: #ffffff;
     padding: 3px;
 }
 .container .form_box .card_content #full_name{
-    width: 35%;
+    width: 90%;
 }
 
 
@@ -54,30 +203,51 @@ body{
     background-color: #ffffff;
     border: none;
     padding: 3px;
+    
 }
 .container .form_box .card_content_two #phone_no{
-    width: 20%;
+    width: 48.5%;
 }
 
 .container .form_box .card_content_three{
     width: 100%;
     float: left;
 }
-.container .form_box .card_content_three input{
-    width: 23.5%;
+.container .form_box .card_content_three textarea{
+    width: 98%;
     padding: 5px;
+    background-color: #ffffff;
+    border: none;
 }
+.container .form_box .card_content_three #purpose{
+    margin-left: 2%;
+    width: 50%;
+    height: 30px;
+    margin-top: 4px;
+}
+
+.container .form_box .card_content_three #date{
+    width: 15%;
+    background-color: #ffffff;
+    margin-left: 2%;
+}
+.container .form_box .card_content_three #purpose_date{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .container .form_box .card_content_four{
     width: 100%;
     float: left;
 }
-.container .form_box .card_content_four input{
-    width: 29.5%;
-    padding: 5px;
+.container .form_box .card_content_four #items_with{
+    width: 98%;
     background-color: #ffffff;
+    border: none;
 }
-.container .form_box .card_content_four #date{
-    width: 10%;
+.container .form_box .card_content_four input{
+    width: 25.5%;
+    padding: 5px;
     background-color: #ffffff;
 }
 .container .form_box .card_content_five{
@@ -85,7 +255,7 @@ body{
     float: left;
 }
 .container .form_box .card_content_five input{
-    width: 15%;
+    width: 17.5%;
 } 
 .container .form_box .card_content_five #checked{
     width: 40px;
@@ -93,7 +263,7 @@ body{
     border: none;
 }
 .container .form_box button{
-    width: 10%;
+    width: 20%;
     height: 30px;
     border: none;
     background-color:#15b2d1 ;
@@ -104,21 +274,3 @@ body{
     cursor: pointer;
     background-color: #000000;
 }
-
-
-
-
-
-/* .container .form_box .small_input{
-    width: 50%;
-}
-.container .form_box #checked{
-    width: 3%;
-}
-.container .form_box select{
-    border: none;
-    background-color: #ffffff;
-    padding: 3px;
-    border-radius: 5px;
-    margin-left: 5px;
-} */

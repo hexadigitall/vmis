@@ -6,12 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>VMIS</title>
-  <link rel="stylesheet" href="signup.css" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Acme|Archivo+Narrow|Righteous|Source+Serif+Pro|Varela+Round&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Acme|Archivo+Narrow|Righteous|Source+Serif+Pro|Varela+Round&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Alef&display=swap" rel="stylesheet">
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css" />
+  <link rel="stylesheet" href="signup.css">
   <script src="https://kit.fontawesome.com/2b9385dd69.js" crossorigin="anonymous"></script>
 </head>
 
@@ -27,82 +25,71 @@
       <nav>
         <ul>
           <li class="links"><a href="index.html"><i class="fas fa-home"></i></a></li>
-          <li class="links"><a href="signIn.html">Sign In</a></li>
-          <li class="links"><a href="signUp.html" class="active">Sign Up</a></li>
+          <li class="links"><a href="signIn.php">Sign In</a></li>
+          <li class="links"><a href="signUp.php" class="active">Sign Up</a></li>
           <li class="links"><a href="events.html">Events</a></li>
         </ul>
       </nav>
+
+      <form action="signUp.php" method="POST">
+        <label>First Name</label>
+        <input type="text" name="firstname" id="firstN" placeholder="First Name" required />
+        <label>Last Name</label>
+        <input type="text" name="lastname" id="secondN" placeholder="Last Name" required />
+        <label for="">Phone</label>
+        <input type="text" placeholder="Phone" id="phone" name="phone" required />
+        <label>Email Address</label>
+        <input type="email" name="username" id="email" placeholder="Email" required />
+        <label>Password</label>
+        <input type="password" name="password" id="password" placeholder="password" required />
+        <label>Confirm Password</label>
+        <input type="password" name="confirmPass" id="confirPpass" placeholder="password" required />
+        <button type="submit" class="register" name="submit">Register</button>
+      </form>
+    </div>
+
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $signup_db = "signup_db";
+    $conn = new mysqli($servername, $username, $password, $signup_db) or die("unable to connect to host");
+
+    ?>
+
+    <?php
+    //inserting values from the form to the database//
+    if (isset($_POST['submit'])) {
+      $firstname = $_POST['firstname'];
+      $secondname = $_POST['lastname'];
+      $phone = $_POST['phone'];
+      $email = $_POST['username'];
+      $pass = $_POST['password'];
+      $confirm_pass = $_POST['confirmPass'];
+
       
-    <form action="signUp.php" method="POST">
-      <label>First Name</label>
-      <input type="text" name="" id="firstN" placeholder="First Name" name="firstN" />
-      <label>Last Name</label>
-      <input type="text" name="" id="secondN" placeholder="Last Name" name="secondN" />
-      <label for="">Phone</label>
-      <input type="text" placeholder="Phone" id="phone" name="phoneNo" />
-      <label>Email Address</label>
-      <input type="email" name="" id="email" placeholder="Email" name="email" />
-      <label>Password</label>
-      <input type="password" name="" id="pass" placeholder="password" name="password" />
-      <button type="submit" class="register">Register</button>
-    </form>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-  <script type="text/javascript">
-	$(function(){
-		$('#register').click(function(e){
+      $existing_email= "SELECT username FROM signup_db";
+      //validating password and email address//
 
-			var valid = this.form.checkValidity();
-
-			if(valid){
-
-
-			var firstname 	= $('#firstname').val();
-			var lastname	= $('#lastname').val();
-			var email 		= $('#email').val();
-			var phonenumber = $('#phonenumber').val();
-			var password 	= $('#password').val();
-			
-
-				e.preventDefault();	
-
-				$.ajax({
-					type: 'POST',
-					url: 'process.php',
-					data: {firstname: firstname,lastname: lastname,email: email,phonenumber: phonenumber,password: password},
-					success: function(data){
-					Swal.fire({
-								'title': 'Successful',
-								'text': data,
-								'type': 'success'
-								})
-							
-					},
-					error: function(data){
-						Swal.fire({
-								'title': 'Errors',
-								'text': 'There were errors while saving the data.',
-								'type': 'error'
-								})
-					}
-				});
-
-				
-			}else{
-				
-			}
-
-			
+      if($pass == $confirm_pass || $email == $existing_email){ 
+      $sql = "INSERT INTO signup_db(firstname, lastname, phone, username, password) VALUES('$firstname','$secondname','$phone','$email','$pass')";
+      if ($conn->query($sql) === TRUE) {
+      
+      }else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+      header('location: signIn.php');
+      echo "<script type='text/javascript'>alert('signup successful');</script>";
+      }
+      else{
+        echo "<script type='text/javascript'>alert('password mismatched');</script>";
+      }
+      $conn->close(); // Closing Connection with Server
+    }
+    ?>
 
 
 
-		});		
-
-		
-	});
-	
-</script>
 </body>
 
 </html>
