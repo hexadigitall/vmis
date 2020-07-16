@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,65 +36,46 @@
         </ul>
       </nav>
 
-      <form action="signUp.php" method="POST">
-        <label>First Name</label>
-        <input type="text" name="firstname" id="firstN" placeholder="First Name" required />
-        <label>Last Name</label>
-        <input type="text" name="lastname" id="secondN" placeholder="Last Name" required />
-        <label for="">Phone</label>
-        <input type="text" placeholder="Phone" id="phone" name="phone" required />
+      <form action="includes/signup.inc.php" method="POST">
+      <?php
+            if (isset($_GET["error"])) {
+                if ($_GET["error"] == "invailmailuid") {
+                    echo '<p class="error">* Invalid Username and Email!</p>';
+                } elseif ($_GET["error"] == "invailuid") {
+                    echo '<p class="error">* Invalid Username!</p>';
+                } elseif ($_GET["error"] == "invailemail") {
+                    echo '<p class="error">* Invalid Email!</p>';
+                } elseif ($_GET["error"] == "passwordcheck") {
+                    echo '<p class="error">* Invalid Password!</p>';
+                } elseif ($_GET["error"] == "usernametaken") {
+                    echo '<p class="error">* Email already exist!</p>';
+                }
+            } 
+            elseif (isset($_GET["signup"])) {
+                if ($_GET["signup"] == "success") {
+                    echo '<p class="success"> Signup Successful</p>';
+                }
+            }
+            else {
+                # code...
+            }
+            
+            ?>
+        <label>Username</label>
+        <input type="text" name="uid" id="firstN" placeholder="Username" required />
+
         <label>Email Address</label>
-        <input type="email" name="username" id="email" placeholder="Email" required />
+        <input type="email" name="email" id="email" placeholder="Email" required />
+
         <label>Password</label>
-        <input type="password" name="password" id="password" placeholder="password" required />
+        <input type="password" name="pwd" id="password" placeholder="Password" required />
+
         <label>Confirm Password</label>
-        <input type="password" name="confirmPass" id="confirPpass" placeholder="password" required />
-        <button type="submit" class="register" name="submit">Register</button>
+        <input type="password" name="con_pwd" id="confirmPass" placeholder="Confirm password" required />
+
+        <button type="submit" class="register" name="signup_submit">Register</button>
       </form>
     </div>
-
-    <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $signup_db = "signup_db";
-    $conn = new mysqli($servername, $username, $password, $signup_db) or die("unable to connect to host");
-
-    ?>
-
-    <?php
-    //inserting values from the form to the database//
-    if (isset($_POST['submit'])) {
-      $firstname = $_POST['firstname'];
-      $secondname = $_POST['lastname'];
-      $phone = $_POST['phone'];
-      $email = $_POST['username'];
-      $pass = $_POST['password'];
-      $confirm_pass = $_POST['confirmPass'];
-
-      
-      $existing_email= "SELECT username FROM signup_db";
-      //validating password and email address//
-
-      if($pass == $confirm_pass || $email == $existing_email){ 
-      $sql = "INSERT INTO signup_db(firstname, lastname, phone, username, password) VALUES('$firstname','$secondname','$phone','$email','$pass')";
-      if ($conn->query($sql) === TRUE) {
-      
-      }else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-      }
-      header('location: signIn.php');
-      echo "<script type='text/javascript'>alert('signup successful');</script>";
-      }
-      else{
-        echo "<script type='text/javascript'>alert('password mismatched');</script>";
-      }
-      $conn->close(); // Closing Connection with Server
-    }
-    ?>
-
-
-
 </body>
 
 </html>

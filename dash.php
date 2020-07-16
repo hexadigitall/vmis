@@ -1,5 +1,12 @@
+<?php
+session_start();
+?>
 
-<!DOCTYPE html>
+<?php
+        $data_username = "SELECT emailUsers FROM vmis_users_db WHERE emailUsers=?";
+        if (isset($_SESSION["usersId"])) {
+            echo ' 
+            <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -31,13 +38,11 @@
         <nav id="sideMenu">
           <div>
             <a href="dash.php" class="active"><i class="fas fa-home"></i> Dashboard</a>
+            <form action="includes/signout.inc.php" method="POST" class="signout">
+            <button type="submit" name="signout_submit" class="signout_button">Sign Out</button>
+        </form>
           </div>
-          <div>
-            <a href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
-          </div>
-          <!-- <div>
-            <a href="#"><i class="fas fa-sign-out-alt"></i>Logout </a>
-          </div> -->
+
         </nav>
         <header>
           <div class="header-area">
@@ -106,3 +111,11 @@
     <div class="footerdash"></div>
   </body>
 </html>
+            ';
+        } else {
+          header("Location: ../signIn.php");
+          exit();
+        };
+        ?>
+   
+

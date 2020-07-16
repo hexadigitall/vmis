@@ -1,5 +1,5 @@
-body{
-    background-color: #dcf0fa;
+body {
+  background-color: #dcf0fa;
 }
 :root {
   --page-backgroundColor: #f4f6f9;
@@ -32,15 +32,15 @@ body {
   background-color: var(--page-backgroundColor);
 }
 
- .headerMenu {
+.headerMenu {
   background-color: var(--page-header-bgColor);
-} 
+}
 
 #sideMenu {
   background-color: var(--page-sideMenuColor);
   max-width: 280px;
   width: 280px;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
 }
@@ -58,6 +58,23 @@ body {
   font-size: 1.4rem;
   margin-right: 0.8rem;
 }
+.signout_button {
+  width: 100%;
+  background-color: var(--page-sideMenu-active);
+  padding: 25px 30px 15px 25px;
+  text-align: left;
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 1.5%;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+.signout_button:hover {
+  border-left: 5px solid var(--page-sideSelectedMenu-active);
+}
 
 nav {
   padding-top: 80px;
@@ -66,6 +83,14 @@ nav {
   background-color: var(--page-sideMenu-active);
   border-left: 5px solid var(--page-sideSelectedMenu-active);
   padding: 25px 30px 15px 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+#sideMenu a:hover {
+  background-color: var(--page-sideMenu-active);
+  border-left: 5px solid var(--page-sideSelectedMenu-active);
 }
 
 header {
@@ -94,6 +119,48 @@ header {
   font-size: 1.2rem;
   color: var(--page-heading-txtColor);
   margin-bottom: 10px;
+}
+
+#contentArea .alert {
+  background-color: var(--page-paragraph-txtColor);
+  color: #ffffff;
+  width: 325px;
+  position: fixed;
+  padding: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 11pt;
+  top: 12%;
+  font-family: monospace;
+  left: 70%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  transition: 0.5s ease-out;
+  align-content: center;
+  border-left: 10px solid var(--page-sideSelectedMenu-active);
+}
+
+#contentArea .alert .close {
+cursor: pointer;
+font-weight: 600;
+padding: 3px;
+position: absolute;
+font-family: 12pt;
+z-index: 4;
+top: 28%;
+left: 85%;
+width: 25px;
+text-align: center;
+
+}
+
+#contentArea .alert .close:hover{
+  background-color: #ffffff;
+  border-radius: 50%;
+  color: var(--page-paragraph-txtColor);
+  width: 25px;
+  
 }
 
 #contentArea p {
@@ -151,126 +218,81 @@ header {
   display: flex;
 }
 
-.container{
-    margin-top: 15px;
-    background-color: #9eb8cd;
-    overflow: hidden;
-    display: block;
-    height: 100%;
+.container {
+  margin: 15px;
+  background-color: var(--page-sideMenuColor);
+  overflow: hidden;
+  display: block;
+  height: 100%;
+  max-width: 900px;
+  float: left;
 }
-.container .form_box{
-    background-color: #9eb8cd;
-    margin: 0 auto;
-    padding: 2%;
-}
-.container .form_box input{
-    width: 100%;
-    border: none;
-    background-color: #ffffff;
-    margin: 5px;
-    padding: 3px;
-    margin-bottom: 13px;
-}
-.container .form_box label{
-    font-family: cursive;
-    font-size: 11pt;
+.container form {
+  width: 95.5%;
+  margin: 1.5%;
+  font-weight: 600;
+  font-family: monospace;
 }
 
-
-.container .form_box .card_content{
-    width: 100%;
-    float: left;
-}
-.container .form_box .card_content #card_no{
-    width: 50%;
-}
-.container .form_box .card_content select{
-    width: 30%;
-    border: none;
-    background-color: #ffffff;
-    padding: 3px;
-}
-.container .form_box .card_content #full_name{
-    width: 90%;
+.container form label {
+  font-size: 11pt;
 }
 
-
-.container .form_box .card_content_two{
-    width: 100%;
-    float: left;
-}
-.container .form_box .card_content_two select{
-    background-color: #ffffff;
-    border: none;
-    padding: 3px;
-    
-}
-.container .form_box .card_content_two #phone_no{
-    width: 48.5%;
+.container form input,
+textarea {
+  width: 100%;
+  padding: 1%;
+  border: none;
+  font-weight: 600;
+  margin: 3px auto;
+  background-color: #2d3b53;
+  transition: 0.2s ease-in;
+  color: #fff;
 }
 
-.container .form_box .card_content_three{
-    width: 100%;
-    float: left;
-}
-.container .form_box .card_content_three textarea{
-    width: 98%;
-    padding: 5px;
-    background-color: #ffffff;
-    border: none;
-}
-.container .form_box .card_content_three #purpose{
-    margin-left: 2%;
-    width: 50%;
-    height: 30px;
-    margin-top: 4px;
+.container form textarea:focus {
+  border: none;
+  outline: none;
+  border-left: 7px solid var(--page-sideSelectedMenu-active);
 }
 
-.container .form_box .card_content_three #date{
-    width: 15%;
-    background-color: #ffffff;
-    margin-left: 2%;
-}
-.container .form_box .card_content_three #purpose_date{
-    display: flex;
-    flex-wrap: wrap;
+.container form input:focus {
+  outline: none;
+  border: none;
+  border-left: 7px solid var(--page-sideSelectedMenu-active);
 }
 
-.container .form_box .card_content_four{
-    width: 100%;
-    float: left;
+.container form .radio {
+  margin: 1%;
+  padding: 0px;
+  width: 20px;
+  outline: none;
+  padding: 3px;
+  background-color: var(--page-sideSelectedMenu-active);
 }
-.container .form_box .card_content_four #items_with{
-    width: 98%;
-    background-color: #ffffff;
-    border: none;
+
+.container form .radio:focus {
+  outline: none;
+  border: none;
+  color: var(--page-sideSelectedMenu-active);
 }
-.container .form_box .card_content_four input{
-    width: 25.5%;
-    padding: 5px;
-    background-color: #ffffff;
+
+.container form button {
+  background-color: var(--page-sideSelectedMenu-active);
+  border: none;
+  width: 300px;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  margin-top: 1%;
+
+  float: right;
+  margin-bottom: 1%;
+  cursor: pointer;
 }
-.container .form_box .card_content_five{
-    width: 100%;
-    float: left;
-}
-.container .form_box .card_content_five input{
-    width: 17.5%;
-} 
-.container .form_box .card_content_five #checked{
-    width: 40px;
-    background-color: #ffffff;
-    border: none;
-}
-.container .form_box button{
-    width: 20%;
-    height: 30px;
-    border: none;
-    background-color:#15b2d1 ;
-    color: #ffffff;
-    border-radius: 5px;
-}
-.container .form_box button:hover{
-    cursor: pointer;
-    background-color: #000000;
+.container form button:hover {
+  border: 1px solid #ffffff;
 }

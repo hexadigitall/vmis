@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,39 +39,15 @@
     <div class="acct_box">
 
       <!-- admin sigin form -->
-      <form action="signIn.php" method="POST">
+      <form action="includes/signIn.inc.php" method="POST">
         <label>Email Address</label>
-        <input type="email" name="username" id="email" placeholder="Email" required />
+        <input type="email" name="email" id="email" placeholder="Email" required />
         <label>Password</label>
-        <input type="password" name="password" id="pass" placeholder="password" required />
-        <button type="submit" class="signIn" name="submit">Login</button>
+        <input type="password" name="pwd" id="pass" placeholder="password" required />
+        <button type="submit" class="signIn" name="login_submit">Login</button>
       </form>
     </div>
   </div>
 
 
 
-  <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $signup_db = "signup_db";
-  $conn = new mysqli($servername, $username, $password, $signup_db) or die("unable to connect to host");
-
-  if(isset($_POST['username'])){
-    $email = $_POST['username'];
-    $pass = $_POST['password'];
-
-    $sql = "select * from signup_db where username='".$email."' AND password='".$pass."' limit 1";
-
-    $result = mysqli_query($conn, $sql);
-
-    if(mysqli_num_rows($result)==1){
-      header('location: dash.php');
-      exit();
-    }else{
-      echo "<script type='text/javascript'>alert('password mismatched');</script>";
-      exit();
-    }
-  }
-  ?>
