@@ -86,12 +86,14 @@
         <input type="date" name="visitDate" >
         <textarea name="itemsWith" placeholder="Items With"></textarea>
         <input type="text" name="ModelNo" placeholder="Model No">
+        <label>Time In</label>
         <input type="time" placeholder="Time In" name="timeIn">
         <label>Attended to</label>
         <label>Yes</label>
         <input type="radio" name="attendedTo" value="yes" class="radio">
         <label>No</label>
         <input type="radio" name="attendedTo" value="no" class="radio">
+        <label>Time Out</label>
         <input type="time" placeholder="Time Out" name="timeOut">
         <button type="submit" name="registerVisitor">Register</button>
       </form>

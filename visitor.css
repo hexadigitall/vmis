@@ -245,9 +245,9 @@ textarea {
   border: none;
   font-weight: 600;
   margin: 3px auto;
-  background-color: #2d3b53;
+  background-color: #fff;
   transition: 0.2s ease-in;
-  color: #fff;
+  color: #000;
 }
 
 .container form textarea:focus {
