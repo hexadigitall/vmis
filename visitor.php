@@ -27,7 +27,7 @@
   </nav>
   <header>
     <div class="header-area">
-      <hi class="header-heading">VISITORS MANAGEMENT INFORMATION SYSTEM</hi>
+      <hi class="header-heading">VISITOR MANAGEMENT INFORMATION SYSTEM</hi>
     </div>
     </div>
   </header>
@@ -60,11 +60,11 @@
       <form action="includes/visitor.inc.php" method="post">
         <input type="text" placeholder="Card No" name="cardNo">
         <label>Card Type? </label>
-        <label>Opencafe</label>
+        <label>Open Cafe</label>
         <input type="radio" name="cardType" value="Opencafe" class="radio">
-        <label>Lesse</label>
+        <label>Lessee</label>
         <input type="radio" name="cardType" value="Lesse" class="radio">
-        <label>Co-work</label>
+        <label>Co-Work</label>
         <input type="radio" name="cardType" value="Co-work" class="radio">
         <label>Admin</label>
         <input type="radio" name="cardType" value="Admin" class="radio">
@@ -93,7 +93,7 @@
         <label>No</label>
         <input type="radio" name="attendedTo" value="no" class="radio">
         <input type="time" placeholder="Time Out" name="timeOut">
-        <button type="submit" name="registerVisitor">register</button>
+        <button type="submit" name="registerVisitor">Register</button>
       </form>
     </div>
 
