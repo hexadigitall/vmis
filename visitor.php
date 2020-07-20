@@ -93,6 +93,7 @@
         <input type="radio" name="attendedTo" value="yes" class="radio">
         <label>No</label>
         <input type="radio" name="attendedTo" value="no" class="radio">
+        <br>
         <label>Time Out</label>
         <input type="time" placeholder="Time Out" name="timeOut">
         <button type="submit" name="registerVisitor">Register</button>
