@@ -54,7 +54,7 @@ session_start();
             elseif (isset($_GET["signup"])) {
                 if ($_GET["signup"] == "success") {
                     echo '<p class="success"> Signup Successful</p>
-                                     
+                    <i class="far fa-check-circle"></i>
                     ';
                 }
             }
