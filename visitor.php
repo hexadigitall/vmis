@@ -96,9 +96,10 @@ session_start();
         <input type="date" name="visitDate">
         <textarea name="itemsWith" placeholder="Items With"></textarea>
         <input type="text" name="ModelNo" placeholder="Model No">
+        
+        <!-- <label>Attended to</label>
         <label>Time In</label>
         <input type="time" placeholder="Time In" name="timeIn">
-        <!-- <label>Attended to</label>
         <label>Yes</label>
         <input type="radio" name="attendedTo" value="yes" class="radio">
         <label>No</label>
@@ -112,18 +113,14 @@ session_start();
     <div class="attended_timeout_form" id="attended_form">
       <span id="closeBtn">x</span>
       <form action="includes/attended.php" method="post">
-        <input type="search" name="search_visitor" id="search_visitor">
-        <button type="submit" name="search_btn" id="btn_search" class="btn_float">Search</button>
-      </form>
-      <form action="includes/attended.php" method="post">
+        <input type="text" name="search_visitor" id="search_visitor">
         <label>Attended to</label>
         <label>Yes</label>
         <input type="radio" name="attendedTo" value="yes" class="radio">
         <label>No</label>
         <input type="radio" name="attendedTo" value="no" class="radio">
         <br>
-        <label>Time Out</label>
-        <input type="time" placeholder="Time Out" name="timeOut" class="timeout">
+       
         <button type="submit" name="update_btn" class="btn_update">Update</button>
       </form>
     </div>
