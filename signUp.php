@@ -53,7 +53,9 @@ session_start();
             } 
             elseif (isset($_GET["signup"])) {
                 if ($_GET["signup"] == "success") {
-                    echo '<p class="success"> Signup Successful</p>';
+                    echo '<p class="success"> Signup Successful</p>
+                                     
+                    ';
                 }
             }
             else {
