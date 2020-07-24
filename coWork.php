@@ -39,15 +39,16 @@ session_start();
   </header>
   <div id="contentArea">
     <div class="heading">
-      <h1>VISITORS FORM</h1>
-      <button id="update_visitor_entry">Update Entry</button>
-      
+      <h1>CO-WORK FORM</h1>
+
       
       <p>RIV-TECHCREEK VMIS</p>
     </div>
     <hr />
     <div class="container">
-      <h1>OPEN CO-WORK FORM</h1>
+      <div>
+        <input type="file" id="mypic" accept="image/*;capture=camera">
+      </div>
       <form action="includes/visitor.inc.php" method="post">
         <label>First Name </label>
         <input type="text" name="firstName" placeholder="First Name">
