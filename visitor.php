@@ -6,23 +6,6 @@ session_start();
         $data_username = "SELECT emailUsers FROM vmis_users_db WHERE emailUsers=?";
         if (isset($_SESSION["usersId"])) {
           
-      if (isset($_GET["error"])) {
-        if ($_GET["error"] == "emptyfeild") {
-          echo '<div class="alert show" id="alert">
-          <span class="alert_warning">There is an empty feild !</span> <span class="close">x</span>
-          </div>';
-        } elseif ($_GET["error"] == "unsuccessfulregistration") {
-          echo '<div class="alert show" id="alert">
-          <span class="alert_warning">Registration was not successful !</span> 
-          <span class="close">x</span>
-          </div>';
-        } elseif (isset($_GET["visitorentry"])) {
-          echo '<div class="alert show" id="alert">
-          <span class="alert_warning">Registration successful !</span> 
-          <span class="close">x</span>
-          </div>';
-        }
-      }
             echo ' 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,60 +50,69 @@ session_start();
     </div>
     <hr />
     <div class="container">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+</head>
+<body>
+  
+<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="my_camera"></div>
+                <br/>
+                <input type=button value="Take Snapshot" onClick="take_snapshot()">
+                <input type="hidden" name="image" class="image-tag">
+            </div>
+            <div class="col-md-6">
+                <div id="results">Your captured image will appear here...</div>
+            </div>
+        </div>
+</div>
+  
+<!-- Configure a few settings and attach camera -->
+
       <form action="includes/visitor.inc.php" method="post">
-        <input type="text" placeholder="Card No" name="cardNo">
+        <input type="text" placeholder="Card No" name="cardNo" required>
         <label>Card Type? </label>
         <label>Open Cafe</label>
-        <input type="radio" name="cardType" value="Opencafe" class="radio">
+        <input type="radio" name="cardType" value="Opencafe" class="radio" required>
         <label>Lessee</label>
-        <input type="radio" name="cardType" value="Lesse" class="radio">
+        <input type="radio" name="cardType" value="Lesse" class="radio" required>
         <label>Co-Work</label>
-        <input type="radio" name="cardType" value="Co-work" class="radio">
+        <input type="radio" name="cardType" value="Co-work" class="radio" required>
         <label>Admin</label>
-        <input type="radio" name="cardType" value="Admin" class="radio">
-        <input type="text" name="fullName" placeholder="Full Name">
+        <input type="radio" name="cardType" value="Admin" class="radio" required>
+        <input type="text" name="fullName" placeholder="Full Name" required>
         <label>Gender</label>
-        <input type="radio" name="gender" value="M" class="radio">
+        <input type="radio" name="gender" value="M" class="radio" required>
         <label>M</label>
-        <input type="radio" name="gender" value="F" class="radio">
+        <input type="radio" name="gender" value="F" class="radio" required>
         <label>F</label>
-        <input type="number" name="phoneNo" placeholder="Phone No">
+        <input type="number" name="phoneNo" placeholder="Phone No" required>
         <label>On Appointment</label>
         <label>Yes</label>
-        <input type="radio" name="onAppointment" value="yes" class="radio">
+        <input type="radio" name="onAppointment" value="yes" class="radio" required>
         <label>No</label>
-        <input type="radio" name="onAppointment" value="no" class="radio">
-        <textarea name="contactAddress" placeholder="Address"></textarea>
-        <input type="text" name="whomToSee" placeholder="Whom to see">
-        <textarea name="purpose" placeholder="Purpose"></textarea>
-        <input type="date" name="visitDate">
-        <textarea name="itemsWith" placeholder="Items With"></textarea>
-        <input type="text" name="ModelNo" placeholder="Model No">
-        
-        <!-- <label>Attended to</label>
-        <label>Time In</label>
-        <input type="time" placeholder="Time In" name="timeIn">
-        <label>Yes</label>
-        <input type="radio" name="attendedTo" value="yes" class="radio">
-        <label>No</label>
-        <input type="radio" name="attendedTo" value="no" class="radio">
-        <br>
-        <label>Time Out</label>
-        <input type="time" placeholder="Time Out" name="timeOut"> -->
+        <input type="radio" name="onAppointment" value="no" class="radio" required>
+        <textarea name="contactAddress" placeholder="Address" required></textarea>
+        <input type="text" name="whomToSee" placeholder="Whom to see" required>
+        <textarea name="purpose" placeholder="Purpose" required></textarea>
+        <textarea name="itemsWith" placeholder="Items With" required></textarea>
+        <input type="text" name="ModelNo" placeholder="Model No" required>
         <button type="submit" name="registerVisitor">Register</button>
       </form>
     </div>
     <div class="attended_timeout_form" id="attended_form">
       <span id="closeBtn">x</span>
       <form action="includes/attended.php" method="post">
-        <input type="text" name="search_visitor" id="search_visitor">
+        <input type="text" name="search_visitor" id="search_visitor" placeholder="Visitors Phone No" required>
         <label>Attended to</label>
         <label>Yes</label>
-        <input type="radio" name="attendedTo" value="yes" class="radio">
+        <input type="radio" name="attendedTo" value="yes" class="radio" required>
         <label>No</label>
-        <input type="radio" name="attendedTo" value="no" class="radio">
+        <input type="radio" name="attendedTo" value="no" class="radio" required>
         <br>
-       
         <button type="submit" name="update_btn" class="btn_update">Update</button>
       </form>
     </div>
@@ -133,3 +125,20 @@ session_start();
           exit();
         };
         ?>
+<script language="JavaScript">
+    Webcam.set({
+        width: 200,
+        height: 200,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+  
+    Webcam.attach( '#my_camera' );
+  
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            $(".image-tag").val(data_uri);
+            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        } );
+    }
+</script>
