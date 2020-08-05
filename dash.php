@@ -98,7 +98,7 @@ session_start();
                 <i class="fas fa-thumbs-up fa-6x"></i>
               </div>
               <div>
-                <a href="#" class="links"><h1>Clock-in</h1></a>
+                <a href="openCafe.php" class="links"><h1>Clock-in</h1></a>
                 <p>
                   Containing clock-in interface
                 </p>

@@ -18,16 +18,3 @@ closeBtn.addEventListener("click", function () {
 
 //closing alert container //
 
-alertCloseBtn.addEventListener("click", function () {
-  alertBox.style.display = "none";
-  alertCloseBtn.style.display = "none";
-});
-
-window.addEventListener("load", function () {
-    alertBox.classList = "disappear";
-  setTimeout(() => {
-    alertBox.style.display = "none";
-    alertCloseBtn.style.display = "none";
-    
-  }, 7000);
-});
