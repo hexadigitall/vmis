@@ -1,35 +1,66 @@
 <?php
-    $search = $_POST['search_visitor'];
+if (isset($_POST['update_btn'])) {
+    $servername = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
+    $dbName = "vmis_db";
+
+    $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbName);
+
+    //if connection fails 
+    if (mysqli_connect_error()) {
+        die("Database connection failed: " . mysqli_connect_error());
+    }
+
+    $search_bar = $_POST['search_visitor'];
     $attended_to = $_POST['attendedTo'];
 
-    date_default_timezone_set('UTC');
 
-    $time_out = date('h:i:s');
+    //checking if input bar is empty and updating current data into the database//
 
-if (isset($_POST['update_btn'])) {
-    require 'dbconnect.php';
+    if (empty($search_bar) || empty($attended_to)) {
+        header("Location: ../visitor.php?visitorentryupdate=emptyfeild");
+        exit();
+    } else {
+        $sql = "UPDATE visitor_entry SET timeout= CURTIME(), attendedTo='$attended_to' WHERE phoneNo = $search_bar";
+        $query = mysqli_query($conn, $sql);
 
+        if ($query) {
+            // display data matching search data//
 
+            $sql = "SELECT * FROM visitor_entry WHERE phoneNo=$search_bar";
+            $result = mysqli_query($conn, $sql);
+            $queryResult = mysqli_num_rows($result);
 
-$sql = "UPDATE visitor_entry SET timeOut = $time_out WHERE phoneNo=$search";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
+            if ($queryResult > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "
+                <div>
+                <p> Card No: " . $row['cardNo'] . "</p>
+                <p> Full Name: " . $row['fullname'] . "</p>
+                <p> Gender: " . $row['gender'] . "</p>
+                <p> Address: " . $row['address'] . "</p>
+                <p> Phone: " . $row['phoneNo'] . "</p>
+                <p> Items with: " . $row['itemsWith'] . "</p>
+                <p> Time in: " . $row['timeIn'] . "</p>
+                <p>Visitor entry successfully updated !</p>
+                </div>
+        ";
+        
+                }
+            } else {
+                echo "
+                <div>
+                    <p>Information entered doesn't match any existing data !</p>
+                </div>
+                ";
+            }
+            exit();
+        } else {
+            echo "Error updating record: " . mysqli_error($conn);
+        }
+    }
 } else {
-    echo "Error updating record: " . $conn->error;
+    header("Location: ../visitor.php");
+    exit();
 }
-
-$conn->close();
-
-};
-
-// if (isset($_POST['search_btn'])) {
-//     require 'dbconnect.php';
-
-//     $sql = "SELECT phoneNo FROM visitor_entry WHERE phoneNo=$search";
-//     if ($conn->query($sql) === TRUE) {
-//         echo $sql;
-//     } else {
-//         echo "Error updating record: " . $conn->error;
-//     }
-    
