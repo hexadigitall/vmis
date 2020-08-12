@@ -1,10 +1,4 @@
-<?php
-session_start();
-?>
-
-<?php
-        
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -39,15 +33,15 @@ session_start();
   </header>
   <div id="contentArea">
     <div class="heading">
-      <h1>CO-WORK FORM</h1>
-
+      <h1>OPEN CAFE FORM</h1>
+      
       
       <p>RIV-TECHCREEK VMIS</p>
     </div>
     <hr />
     <div class="container">
       <div>
-        <input type="file" id="mypic" accept="image/*;capture=camera">
+        <input type="file" id="mypic" accept="image/*; capture=camera">
       </div>
       <form action="includes/visitor.inc.php" method="post">
         <label>First Name </label>
@@ -55,8 +49,7 @@ session_start();
         <label>Last Name</label>
         <input type="text" name="lastName" placeholder="Last Name">
         <label>Other Names</label>
-        <input type="text" name="otherNames" placeholder="Other Names">
-        <label>Gender</label>
+        <input type="text" name="otherName" placeholder="Other Names">
         <label>Gender</label>
         <input type="radio" name="gender" value="M" class="radio">
         <label>M</label>
@@ -65,15 +58,11 @@ session_start();
         <label>Age</label>
         <input type="number" name="age" placeholder="Age">
         <label>Phone No.</label>
-        <input type="number" name="phone_No" placeholder="Phone No">
+        <input type="number" name="phoneNo" placeholder="Phone No">
         <label>Residence</label>
         <input type="text" name="Residence" placeholder="Address">
         <label>Registration Month</label>
-        <input type="date" name="Reg_Month" placeholder="Registration Month">
-        <label>Business Name</label>
-        <input type="text" name="Biz_Name" placeholder="Business Name">
-        <label>Business Designation</label>
-        <input type="text" name="Biz_Designation" placeholder="Business Designation">
+        <input type="date" name="RegMonth" placeholder="Registration Month">
         <label>Contract Period</label>
         <br>
         <input type="radio" name="contract_period" value="HalfMonth" class="radio">
@@ -84,9 +73,3 @@ session_start();
 </body>
 // <script src="scripts/popups.js"></script>
 </html>
-';
-        } else {
-          header("Location: ../signIn.php");
-          exit();
-        };
-        ?>
