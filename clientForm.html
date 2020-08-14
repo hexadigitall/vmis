@@ -1,0 +1,144 @@
+<!-- <?php
+session_start();
+?>
+
+<?php -->
+        
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Client Form</title>
+  <link rel="stylesheet" href="clientForm.css" />
+  <link href="https://fonts.googleapis.com/css?family=Alef&display=swap" rel="stylesheet">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css" />
+  <script src="https://kit.fontawesome.com/2b9385dd69.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="mainDashboard">
+
+    <div class="Menu">
+      <nav id="sideMenu">
+        <a href="dash.php" class=""><i class="fas fa-home"></i> Dashboard</a>
+        <form action="includes/signout.inc.php" method="POST" class="signout">
+          <button type="submit" name="signout_submit" class="signout_button"><i class="fas fa-sign-out-alt"></i>Sign Out</button>
+        </form>
+    </div>
+
+  </div>
+  </nav>
+  <header>
+    <div class="header-area">
+      <hi class="header-heading">VISITOR MANAGEMENT INFORMATION SYSTEM</hi>
+    </div>
+    </div>
+  </header>
+  <div id="contentArea">
+    <div class="heading">
+      <h1 id="form_title">CLIENT FORM </h1>
+      <p>RIV-TECHCREEK VMIS</p>
+    </div>
+    <hr />
+    <!-- client form start -->
+    <div class="form_top">
+      <div class="option-group">
+        <h2>Fill in the form </h2>
+      </div>
+      <div class="option-group">
+        <label for="fieldSelectionGroup">Choose a category:</label>
+        <select class="optionSelection" id="fieldSelectionGroup" name="spaceLocation">
+          <option>Choose option...</option>
+          <option value="yes">Co-Working</option>
+          <option value="yes">Lessee</option>
+          <option value="no">Open Cafe</option>
+        </select>
+      </div>
+    </div>
+    <div class="container" id="opencafe_form">
+      <div class="imageCapture">
+        <input type="file" id="mypic" accept="image/*; capture=camera">
+      </div>
+      <form action="includes/clientReg.inc.php" method="post">
+        <div class="form-group" id="firstFieldgroupDiv">
+          <label for="fname">First Name </label>
+          <input type="text" name="firstName" placeholder="First Name">
+          <label for="lname">Last Name</label>
+          <input type="text" name="lastName" placeholder="Last Name">
+          <label for="oname">Other Names</label>
+          <input type="text" name="otherName" placeholder="Other Names">
+          <br>
+          <br>
+          <label class="radio_label">Gender</label>
+        <!-- <br> -->
+          <label class="radio_label">M</label>
+          <input type="radio" name="gender" value="M" class="radio">
+          <label class="radio_label">F</label>
+          <input type="radio" name="gender" value="F" class="radio">
+          <label class="radio_label">Others</label>
+          <input type="radio" name="gender" value="others" class="radio">
+          <br>
+          <br>
+          <label>Age</label>
+          <input type="number" name="age" placeholder="Age">
+          <label>Phone No.</label>
+          <input type="number" name="phoneNo" placeholder="Phone No">
+          <label>Residence</label>
+          <input type="text" name="Residence" placeholder="Address">
+          <label>Registration Month</label>
+          <input type="date" name="RegMonth" placeholder="Registration Month">
+        </div>
+        <div class="form-group" id="secondFieldgroupDiv">  
+          <label>Business Name</label>
+          <input type="text" name="Biz_Name" placeholder="Business Name">
+          <label>Business Designation</label>
+          <input type="text" name="Biz_Designation" placeholder="Business Designation">
+          <label>Contract Period</label>
+          <br>
+          <input type="radio" name="contract_period" value="HalfMonth" placeholder="HalfMonth" class="radio">
+          <label>Full Month</label>
+          <input type="radio" name="contract_period" value="FullMonth" class="radio">
+          <label>Half Month</label>
+        </div>
+          <br>
+          <br>
+          <button type="submit" name="registerOpencafe">Register</button>
+      </form>
+    </div>
+  <!-- client form end -->
+
+    
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/showform.js"></script>
+    <script>
+      $("#fieldSelectionGroup").change(function() {
+        if ($(this).val() == "yes") {
+           $('#secondFieldgroupDiv').show();
+           $('#secondFieldgroup').attr('required', '');
+           $('#secondFieldgroup').attr('data-error', 'This field is required.');
+         } else {
+          $('#secondFieldgroupDiv').hide();
+           $('#secondFieldgroup').removeAttr('required');
+          $('#secondFieldgroup').removeAttr('data-error');
+        }
+      });
+      $("#fieldSelectionGroup").trigger("change");
+    </script>
+    
+    <!-- scripts -->
+</body>
+<!-- // <script src="scripts/popups.js"></script> -->
+</html>
+<!-- ';
+        } else {
+          header("Location: ../signIn.php");
+          exit();
+        };
+        ?> -->
+
+
+      
