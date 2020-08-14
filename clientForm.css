@@ -239,12 +239,14 @@ header {
   font-size: 2.2rem;
 }
 
+/* top of the client form */
 .form_top {
   display: flex;
   justify-content: space-between;
   max-width: 900px;
   margin: 0 70px;
   margin-top: 20px;
+  padding-bottom: 5px;
 }
 
 .form_top label {
@@ -275,15 +277,13 @@ header {
 
 .form_top select:hover {
   background: #e2ecf7;
+  cursor: pointer;
 }
 
-select option {
+.form_top select option {
   border: 1px solid #000;
   background: rgba(188, 195, 235, 0.267);
-}
-
-select option:hover {
-  background: #ffffff;
+  cursor: pointer;
 }
 
 .container {
@@ -335,13 +335,17 @@ textarea {
 }
 /* .container form .radio_label {
 } */
+
+.container form .radio_options {
+  width: 300px;
+  margin: 5px;
+}
 .container form .radio {
   margin: 0px;
   padding: 0px;
   width: 10%;
   height: auto;
   outline: none;
-  /* padding: 3px; */
   background-color: var(--page-sideSelectedMenu-active);
 }
 
@@ -351,8 +355,24 @@ textarea {
   color: var(--page-sideSelectedMenu-active);
 }
 
-.label_radio {
-  display: flex;
+/* program types and course types styling */
+
+form .formGroup .programTypeselection,
+.courseTypeselection {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #00b9eb;
+  font-weight: 600;
+  font-size: 13pt;
+  box-shadow: inset 1px 1px 2px #ddd8dc;
+  color: #4e5969;
+  cursor: pointer;
+}
+
+form .formGroup option {
+  background: rgb(174, 203, 230);
+  color: #000;
 }
 
 .container form button {

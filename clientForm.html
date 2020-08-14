@@ -39,7 +39,7 @@ session_start();
   </header>
   <div id="contentArea">
     <div class="heading">
-      <h1 id="form_title">CLIENT FORM </h1>
+      <h1 id="form_title">CLIENTS FORM </h1>
       <p>RIV-TECHCREEK VMIS</p>
     </div>
     <hr />
@@ -55,10 +55,11 @@ session_start();
           <option value="yes">Co-Working</option>
           <option value="yes">Lessee</option>
           <option value="no">Open Cafe</option>
+          <option value="students"> Students</option>
         </select>
       </div>
     </div>
-    <div class="container" id="opencafe_form">
+    <div class="container" id="client_form">
       <div class="imageCapture">
         <input type="file" id="mypic" accept="image/*; capture=camera">
       </div>
@@ -71,16 +72,16 @@ session_start();
           <label for="oname">Other Names</label>
           <input type="text" name="otherName" placeholder="Other Names">
           <br>
-          <br>
           <label class="radio_label">Gender</label>
-        <!-- <br> -->
-          <label class="radio_label">M</label>
-          <input type="radio" name="gender" value="M" class="radio">
-          <label class="radio_label">F</label>
-          <input type="radio" name="gender" value="F" class="radio">
-          <label class="radio_label">Others</label>
-          <input type="radio" name="gender" value="others" class="radio">
-          <br>
+          <div class="radio_options" >
+            <label class="radio_option">M</label>
+            <input type="radio" name="gender" value="M" class="radio">
+            <label class="radio_option">F</label>
+            <input type="radio" name="gender" value="F" class="radio">
+            <label class="radio_option">Others</label>
+            <input type="radio" name="gender" value="others" class="radio">
+          </div>
+          
           <br>
           <label>Age</label>
           <input type="number" name="age" placeholder="Age">
@@ -90,6 +91,42 @@ session_start();
           <input type="text" name="Residence" placeholder="Address">
           <label>Registration Month</label>
           <input type="date" name="RegMonth" placeholder="Registration Month">
+        </div>
+        <div class="formGroup" id="studentFieldgroupDiv"> 
+          <div class="form-group" id="programFieldgroupDiv">
+            <label>Program type</label>
+            <select class="programTypeselection" id="programfieldSelectionGroup" name="spaceLocation">
+              <option>Select program type...</option>
+              <option value="codegaminators">Codegaminators</option>
+              <option value="codegaminator-juniors">Codegaminator-Juniors</option>
+              <option value="">Digi-Skills</option>
+              <option value="">Riv-Jobs</option>
+              <option value="">Students</option>
+            </select>
+          </div>
+          <div class="form-group" id="codegaminatorFieldgroupDiv">
+            <label>Course:</label>
+            <select class="courseTypeselection" id="coursefieldSelectionGroup" name="course">
+              <option>Select course type...</option>
+              <option value="">Animation</option>
+              <option value="">Database Management</option>
+              <option value="">CyberSecurity</option>
+              <option value="">Photography</option>
+              <option value="">Networking and Hardware Management</option>
+              <option value="">Web Development</option>
+              <option value="">UI/Graphics Design</option>
+            </select>
+          </div>
+          <div class="form-group" id="codegaminatorJuniorgroupDiv">
+            <label>Course:</label>
+            <select class="courseTypeselection" id="juniorCourseselectionGroup" name="course">
+              <option>Select course type...</option>
+              <option value="coding">Coding</option>
+              <option value="cybersecurity">CyberSecurity</option>
+              <option value="graphics">Graphics Design</option>
+              <option value="uav">UAV</option>
+            </select>
+          </div>
         </div>
         <div class="form-group" id="secondFieldgroupDiv">  
           <label>Business Name</label>
@@ -115,18 +152,62 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/showform.js"></script>
     <script>
+      // form option selection for lessee and co-working
       $("#fieldSelectionGroup").change(function() {
         if ($(this).val() == "yes") {
            $('#secondFieldgroupDiv').show();
            $('#secondFieldgroup').attr('required', '');
            $('#secondFieldgroup').attr('data-error', 'This field is required.');
          } else {
-          $('#secondFieldgroupDiv').hide();
+           $('#secondFieldgroupDiv').hide();
            $('#secondFieldgroup').removeAttr('required');
-          $('#secondFieldgroup').removeAttr('data-error');
+           $('#secondFieldgroup').removeAttr('data-error');
         }
       });
+        
       $("#fieldSelectionGroup").trigger("change");
+
+      // form students option selection 
+      $("#fieldSelectionGroup").change(function() {
+          if ($(this).val() == "students") {
+            $('#studentFieldgroupDiv').show();
+            $('#programfieldSelectionGroup').attr('required', '');
+            $('#programfieldSelectionGroup').attr('data-error', 'This field is required.');
+          } else {
+            $('#studentFieldgroupDiv').hide();
+            $('#programfieldSelectionGroup').removeAttr('required');
+            $('#programfieldSelectionGroup').removeAttr('data-error');
+          }
+      });
+      $("#fieldSelectionGroup").trigger("change");
+
+      // program type selection for Codegaminator students
+      $("#programfieldSelectionGroup").change(function() {
+          if ($(this).val() == "codegaminators") {
+            $('#codegaminatorFieldgroupDiv').show();
+            $('#coursefieldSelectionGroup').attr('required', '');
+            $('#coursefieldSelectionGroup').attr('data-error', 'This field is required.');
+          } else {
+            $('#codegaminatorFieldgroupDiv').hide();
+            $('coursefieldSelectionGroup').removeAttr('required');
+            $('coursefieldSelectionGroup').removeAttr('data-error');
+          }
+      });
+      $("#programfieldSelectionGroup").trigger("change");
+
+      // program type selection for Codegaminator juniors
+      $("#programfieldSelectionGroup").change(function() {
+          if ($(this).val() == "codegaminator-juniors") {
+            $('#codegaminatorJuniorgroupDiv').show();
+            $('#juniorCourseselectionGroup').attr('required', '');
+            $('#juniorCourseselectionGroup').attr('data-error', 'This field is required.');
+          } else {
+            $('#codegaminatorJuniorgroupDiv').hide();
+            $('juniorCourseselectionGroup').removeAttr('required');
+            $('juniorCourseselectionGroup').removeAttr('data-error');
+          }
+      });
+      $("#programfieldSelectionGroup").trigger("change");
     </script>
     
     <!-- scripts -->
@@ -141,4 +222,32 @@ session_start();
         ?> -->
 
 
-      
+        <!-- $("#seeAnotherField").change(function() {
+          if ($(this).val() == "yes") {
+            $('#otherFieldDiv').show();
+            $('#otherField').attr('required', '');
+            $('#otherField').attr('data-error', 'This field is required.');
+          } else {
+            $('#otherFieldDiv').hide();
+            $('#otherField').removeAttr('required');
+            $('#otherField').removeAttr('data-error');
+          }
+        });
+        $("#seeAnotherField").trigger("change");
+        
+        $("#seeAnotherFieldGroup").change(function() {
+          if ($(this).val() == "yes") {
+            $('#otherFieldGroupDiv').show();
+            $('#otherField1').attr('required', '');
+            $('#otherField1').attr('data-error', 'This field is required.');
+            $('#otherField2').attr('required', '');
+            $('#otherField2').attr('data-error', 'This field is required.');
+          } else {
+            $('#otherFieldGroupDiv').hide();
+            $('#otherField1').removeAttr('required');
+            $('#otherField1').removeAttr('data-error');
+            $('#otherField2').removeAttr('required');
+            $('#otherField2').removeAttr('data-error');
+          }
+        });
+        $("#seeAnotherFieldGroup").trigger("change"); -->
