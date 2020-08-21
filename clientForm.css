@@ -295,6 +295,11 @@ header {
   max-width: 900px;
   float: left;
 }
+
+/* Capture/camera styling */
+.container .row {
+  margin-left: 20px;
+}
 .container form {
   width: 95.5%;
   /* margin: 1.5%; */
