@@ -52,18 +52,26 @@ session_start();
         <label for="fieldSelectionGroup">Choose a category:</label>
         <select class="optionSelection" id="fieldSelectionGroup" name="spaceLocation">
           <option>Choose option...</option>
-          <option value="yes">Co-Working</option>
-          <option value="yes">Lessee</option>
-          <option value="no">Open Cafe</option>
-          <option value="students"> Students</option>
+          <option name="coWorkingButton" value="yes">Co-Working</option>
+          <option name="lesseeButton" value="yes">Lessee</option>
+          <option name="opencafeButton" value="no">Open Cafe</option>
+          <option name="studentsButton" value="students"> Students</option>
         </select>
       </div>
     </div>
     <div class="container" id="client_form">
-      <div class="imageCapture">
-        <input type="file" id="mypic" accept="image/*; capture=camera">
-      </div>
-      <form action="includes/clientReg.inc.php" method="post">
+      <div class="row">
+        <div class="col-md-6">
+            <div id="my_camera"></div>
+            <br/>
+            <input type=button value="Take Snapshot" onClick="take_snapshot()">
+            <input type="hidden" name="image" class="image-tag">
+        </div>
+        <div class="col-md-6">
+            <div id="results">Your captured image will appear here...</div>
+        </div>
+    </div>
+      <form name="clients" action="includes/clientReg.inc.php" method="post">
         <div class="form-group" id="firstFieldgroupDiv">
           <label for="fname">First Name </label>
           <input type="text" name="firstName" placeholder="First Name">
@@ -142,7 +150,7 @@ session_start();
         </div>
           <br>
           <br>
-          <button type="submit" name="registerOpencafe">Register</button>
+          <button type="submit" name="name">Register</button>
       </form>
     </div>
   <!-- client form end -->
@@ -151,7 +159,46 @@ session_start();
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/showform.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     <script>
+
+      // scripts for webcam image capture
+      Webcam.set({
+            width: 200,
+            height: 200,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+      });
+    
+      Webcam.attach( '#my_camera' );
+    
+      function take_snapshot() {
+          Webcam.snap( function(data_uri) {
+             $(".image-tag").val(data_uri);
+             document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+          } );
+      };
+
+    // scripts for changing name attribute on the submit buttton based on the selected option
+
+      $(document).ready(function() {
+        $("#fieldSelectionGroup").change(function(){
+          if($(this).name()=='coWorkingButton')
+            {
+              $("button[type=submit]").attr('name',"coWorkingReg");
+            }
+            else if($(this).name()=='lesseeButton'){
+              $("button[type=submit]").attr('name',"lesseeReg");
+            }
+            else if($(this).name()=='opencafeButton'){
+              $("button[type=submit]").attr('name',"opencafeReg");
+            }
+            else if($(this).name()=='studentsButton'){
+              $("button[type=submit]").attr('name',"studentsReg");
+            }
+        });
+      });
       // form option selection for lessee and co-working
       $("#fieldSelectionGroup").change(function() {
         if ($(this).val() == "yes") {
@@ -220,34 +267,3 @@ session_start();
           exit();
         };
         ?> -->
-
-
-        <!-- $("#seeAnotherField").change(function() {
-          if ($(this).val() == "yes") {
-            $('#otherFieldDiv').show();
-            $('#otherField').attr('required', '');
-            $('#otherField').attr('data-error', 'This field is required.');
-          } else {
-            $('#otherFieldDiv').hide();
-            $('#otherField').removeAttr('required');
-            $('#otherField').removeAttr('data-error');
-          }
-        });
-        $("#seeAnotherField").trigger("change");
-        
-        $("#seeAnotherFieldGroup").change(function() {
-          if ($(this).val() == "yes") {
-            $('#otherFieldGroupDiv').show();
-            $('#otherField1').attr('required', '');
-            $('#otherField1').attr('data-error', 'This field is required.');
-            $('#otherField2').attr('required', '');
-            $('#otherField2').attr('data-error', 'This field is required.');
-          } else {
-            $('#otherFieldGroupDiv').hide();
-            $('#otherField1').removeAttr('required');
-            $('#otherField1').removeAttr('data-error');
-            $('#otherField2').removeAttr('required');
-            $('#otherField2').removeAttr('data-error');
-          }
-        });
-        $("#seeAnotherFieldGroup").trigger("change"); -->
