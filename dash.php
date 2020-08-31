@@ -86,7 +86,7 @@ session_start();
                 <i class="fas fa-user-lock fa-6x"></i>
               </div>
               <div>
-                <a href="#" class="links"><h1>Administration</h1></a>
+                <a href="openCafe.html" class="links"><h1>Administration</h1></a>
                 <p>
                   Show the Administrations panel
                 </p>
