@@ -72,7 +72,7 @@ session_start();
   
 <!-- Configure a few settings and attach camera -->
 
-      <form action="includes/visitor.inc.php" method="post">
+      <form name="regForm" action="includes/visitor.inc.php" method="post">
         <input type="text" placeholder="Card No" name="cardNo" required>
         <label>Card Type? </label>
         <label>Open Cafe</label>

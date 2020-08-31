@@ -1,3 +1,5 @@
+/* styling for dashboard */
+
 :root {
   --page-backgroundColor: #f4f6f9;
   --page-header-bgColor: #fff;
@@ -33,12 +35,81 @@ body {
   background-color: var(--page-header-bgColor);
 } */
 
+/* Dashboard sideMenu styling starts here */
+.mainDashboard {
+  width: 100%;
+}
+
+/* Dropdown Button */
+.nav-btn {
+  width: 100%;
+  background-color: var(--page-sideMenu-active);
+  padding: 25px 30px 15px 25px;
+  text-align: left;
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 1.5%;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+/* Dropdown button on hover & focus */
+.nav-btn:hover,
+.nav-btn:focus {
+  border-left: 5px solid var(--page-sideSelectedMenu-active);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* .dropdown button {
+  border-left: 5px solid var(--page-sideSelectedMenu-active);
+} */
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-left: 2%;
+  background-color: var(--page-sideMenuColor);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 98%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: var(--page-sideMenu-active);
+  background-color: #700b32;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #206aca;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
 #sideMenu {
   background-color: var(--page-sideMenuColor);
-  width: 22%;
+  width: 20%;
   position: absolute;
   top: 0;
   bottom: 0;
+  height: 100vh;
 }
 
 #sideMenu a {
@@ -84,11 +155,17 @@ nav {
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: 0.2s ease-in;
 }
 .signout_button:hover {
   border-left: 5px solid var(--page-sideSelectedMenu-active);
 }
+/* Dashboard sideMenu styling ends here */
+
+/* Dashboard Header styling */
+
 header {
+  width: 80%;
   background-color: var(--page-header-bgColor);
   margin-left: 280px;
   padding: 20px;
@@ -107,6 +184,40 @@ header {
   text-align: center;
 }
 
+/* Dashboard Header styling ends here */
+
+/* Admin Dashboard Home Content  */
+.admin-home {
+  width: 90%;
+  background-color: rgb(226, 243, 246);
+  margin-left: 30px;
+  padding: 20px 10px;
+  border-radius: 2px;
+}
+.display {
+  width: 99%;
+  /* width: 930px; */
+  background-color: white;
+  margin: 5px auto;
+  border: 1px solid rgb(233, 231, 231);
+  border-radius: 3px;
+  padding: 0px 25px;
+}
+
+.start {
+  border-bottom: 1px solid rgb(173, 170, 170);
+  height: 4rem;
+  margin-top: 15px;
+  padding: 10px 5px;
+  /* padding: 20px 5px; */
+  background-color: white;
+}
+.end {
+  border-bottom: 0px;
+}
+.start h4 {
+  margin-bottom: 5px;
+}
 #contentArea {
   margin-left: 280px;
   padding: 15px;
@@ -157,6 +268,9 @@ header {
   padding-top: 40px;
   font-size: 2.2rem;
 }
+/* #contentArea .content-text p {
+  color: white;
+} */
 /* .dashContent .boxWriteup p {
   color: white;
 } */
@@ -175,4 +289,878 @@ header {
 .box4 {
   background-color: rgb(238, 9, 20);
   display: flex;
+}
+
+.adminportal-btn button {
+  background-color: rgb(151, 218, 17);
+  height: 120px;
+  margin-top: 10px;
+}
+/* Popup form */
+/* .form-popup form select {
+  box-sizing: border-box;
+  font-size: 15px;
+  border-radius: 10px;
+  font: inherit;
+  line-height: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-padding-end: 20px;
+  -moz-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -moz-padding-start: 2px;
+  margin-left: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-popup form select:hover {
+  background: #e2ecf7;
+  cursor: pointer;
+}
+
+.form-popup form select option {
+  border: 1px solid #000;
+  cursor: pointer;
+} */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 34px;
+  /* border: 3px solid #ca5959; */
+  z-index: 9;
+  width: 73%;
+}
+.form-container {
+  max-width: 300px;
+  padding: 2px 10px;
+  background-color: white;
+  margin: 0 auto;
+  border: 3px solid #ca5959;
+}
+
+.form-head {
+  text-align: center;
+}
+.form-container label {
+  padding-left: 10px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 93%;
+  padding: 15px;
+  margin: 0px 0 20px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+.form-container .btn:hover {
+  opacity: 1;
+}
+
+/* Popup form error message */
+.error-message {
+  padding: 7px 10px;
+  background: #fff1f2;
+  border: #ffd5da 1px solid;
+  color: #d6001c;
+  border-radius: 4px;
+  margin: 30px 10px 10px 10px;
+}
+
+.error-info {
+  color: #ff0000;
+  margin-left: 10px;
+}
+
+/* RESPONSIVENESS RESPONSIVENESS RESPONSIVENESS RESPONSIVENESS RESPONSIVENESS RESPONSIVENESS
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Hamburger Menu abd sideMenu styling */
+  #sideMenu {
+    background-color: var(--page-sideMenuColor);
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    opacity: 0.98;
+    visibility: hidden;
+  }
+  #sideMenu.show {
+    visibility: visible;
+  }
+
+  #sideMenu a {
+    margin-bottom: 3px;
+  }
+
+  nav {
+    padding-top: 75px;
+  }
+
+  .menu-btn {
+    position: absolute;
+    z-index: 6;
+    left: 20px;
+    top: 23px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: navy;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .menu-btn.close {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .menu-btn.close .btn-line:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-btn.close .btn-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-btn.close .btn-line:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .sideMenu-content {
+    float: right;
+    width: 100%;
+    /* height: 40vh; */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  .sideMenu-content.show {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .sideMenu-content .nav-item {
+    -webkit-transform: translate3d(600px, 0, 0);
+    transform: translate3d(600px, 0, 0);
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .sideMenu-content .nav-item.show {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .nav-item:nth-child(1) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+
+  .nav-item:nth-child(2) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+
+  /* hamburger Menu and sideMenu styling ends here */
+  /* Dashboard sideMenu styling ends here */
+
+  /* Dashboard Header styling */
+
+  header {
+    width: 100%;
+    background-color: var(--page-header-bgColor);
+    margin: 0px;
+    justify-content: space-around;
+  }
+
+  .header-area {
+    text-align: center;
+    margin-left: 10%;
+  }
+
+  .header-heading {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: navy;
+  }
+
+  .header-heading h1 {
+    text-align: center;
+  }
+
+  /* Dashboard Header styling ends here */
+  #contentArea {
+    margin-left: 0px;
+    padding: 5px;
+  }
+
+  #contentArea .heading {
+    font-weight: 100;
+    font-size: 0.8rem;
+    color: var(--page-heading-txtColor);
+    margin: 10px 0px 5px 0px;
+    text-align: center;
+  }
+
+  #contentArea p {
+    font-size: 0.8rem;
+    color: var(--page-paragraph-txtColor);
+  }
+
+  .dashBoxes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .dashContent {
+    width: 85%;
+    height: 100px;
+    margin-top: 15px;
+  }
+
+  .icons {
+    color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
+  .links {
+    text-decoration: none;
+    color: white;
+  }
+
+  .dashContent h1 {
+    padding-top: 15px;
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  /* Smartphones (portrait) ----------- */
+  /* Hamburger Menu abd sideMenu styling */
+  #sideMenu {
+    background-color: var(--page-sideMenuColor);
+    position: fixed;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+    opacity: 0.98;
+    visibility: hidden;
+  }
+  #sideMenu.show {
+    visibility: visible;
+  }
+
+  #sideMenu a {
+    margin-bottom: 3px;
+  }
+
+  nav {
+    padding-top: 75px;
+  }
+
+  .menu-btn {
+    position: absolute;
+    z-index: 6;
+    left: 20px;
+    top: 23px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: navy;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .menu-btn.close {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .menu-btn.close .btn-line:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-btn.close .btn-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-btn.close .btn-line:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .sideMenu-content {
+    float: right;
+    width: 100%;
+    /* height: 40vh; */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  .sideMenu-content.show {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .sideMenu-content .nav-item {
+    -webkit-transform: translate3d(600px, 0, 0);
+    transform: translate3d(600px, 0, 0);
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .sideMenu-content .nav-item.show {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .nav-item:nth-child(1) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+
+  .nav-item:nth-child(2) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+
+  /* hamburger Menu and sideMenu styling ends here */
+
+  /* Dashboard Header styling */
+
+  header {
+    width: 100%;
+    background-color: var(--page-header-bgColor);
+    margin: 0px;
+  }
+
+  .header-area {
+    text-align: center;
+    margin-left: 10%;
+  }
+
+  .header-heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: navy;
+  }
+
+  .header-heading h1 {
+    text-align: center;
+  }
+
+  /* Dashboard Header styling ends here */
+
+  #contentArea {
+    margin-left: 0px;
+    padding: 5px;
+  }
+
+  #contentArea .heading {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--page-heading-txtColor);
+    margin: 10px 0px 5px 0px;
+    text-align: center;
+  }
+
+  #contentArea p {
+    font-size: 1rem;
+    color: var(--page-paragraph-txtColor);
+  }
+
+  .dashBoxes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .dashContent {
+    width: 85%;
+    height: 100px;
+    margin-top: 20px;
+    padding: 0px 20px 0px 20px;
+  }
+
+  .dashContent h1 {
+    padding-top: 15px;
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  /* STYLES GO HERE */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #sideMenu {
+    background-color: var(--page-sideMenuColor);
+    width: 25%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+  }
+  #sideMenu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 25px 30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #sideMenu fa {
+    color: greenyellow;
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+  }
+
+  nav {
+    padding-top: 80px;
+  }
+  #sideMenu a.active {
+    background-color: var(--page-sideMenu-active);
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+    padding: 25px 30px 15px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  #sideMenu a:hover {
+    background-color: var(--page-sideMenu-active);
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+  }
+  .signout_button {
+    width: 100%;
+    background-color: var(--page-sideMenu-active);
+    padding: 25px 30px 15px 25px;
+    text-align: left;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 1.5%;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .signout_button:hover {
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+  }
+  /* Dashboard sideMenu styling ends here */
+
+  /* Dashboard Header styling */
+
+  header {
+    width: 76%;
+    background-color: var(--page-header-bgColor);
+    margin-left: 24%;
+    padding: 28px;
+    text-align: center;
+  }
+
+  .header-area {
+    margin-left: 8%;
+  }
+
+  .header-heading {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: navy;
+  }
+
+  .header-heading h1 {
+    text-align: center;
+  }
+
+  /* Dashboard Header styling ends here */
+
+  #contentArea {
+    margin-left: 24%;
+    padding: 15px;
+    width: 76%;
+    padding: 3px;
+  }
+
+  #contentArea .heading {
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--page-heading-txtColor);
+    margin-bottom: 5px;
+  }
+
+  #contentArea p {
+    font-size: 0.9rem;
+    color: var(--page-paragraph-txtColor);
+  }
+
+  .dashBoxes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .dashContent {
+    width: 45%;
+    height: 140px;
+    margin-top: 20px;
+    padding: 10px 0 0 15px;
+  }
+
+  .dashContent h1 {
+    padding-top: 40px;
+    font-size: 1.8rem;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1025px) and (max-device-width: 1440px) {
+  /* Dashboard sideMenu styling starts here */
+  #sideMenu {
+    background-color: var(--page-sideMenuColor);
+    width: 22%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+  }
+  #sideMenu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 25px 30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #sideMenu fa {
+    color: greenyellow;
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+  }
+
+  nav {
+    padding-top: 80px;
+  }
+  #sideMenu a.active {
+    background-color: var(--page-sideMenu-active);
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+    padding: 25px 30px 15px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  #sideMenu a:hover {
+    background-color: var(--page-sideMenu-active);
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+  }
+  .signout_button {
+    width: 100%;
+    background-color: var(--page-sideMenu-active);
+    padding: 25px 30px 15px 25px;
+    text-align: left;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 1.5%;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .signout_button:hover {
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+  }
+  /* Dashboard sideMenu styling ends here */
+
+  /* Dashboard Header styling */
+
+  header {
+    width: 78%;
+    background-color: var(--page-header-bgColor);
+    margin-left: 22%;
+    padding: 28px;
+    text-align: center;
+  }
+  /* .header-area {
+    margin-left: 20px;
+  } */
+
+  .header-heading {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: navy;
+  }
+
+  .header-heading h1 {
+    text-align: center;
+  }
+
+  /* Dashboard Header styling ends here */
+
+  #contentArea {
+    margin-left: 22%;
+    padding: 3px;
+  }
+
+  #contentArea .heading {
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--page-heading-txtColor);
+    margin-bottom: 5px;
+    margin-left: 30px;
+  }
+
+  #contentArea p {
+    font-size: 0.9rem;
+    color: var(--page-paragraph-txtColor);
+  }
+
+  /* .dashBoxes {
+    background-color: ;
+  } */
+
+  .dashBoxes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .dashContent {
+    width: 45%;
+    height: 140px;
+    margin-top: 20px;
+    padding: 10px 0 0 15px;
+  }
+  .dashContent h1 {
+    padding-top: 40px;
+    font-size: 2.2rem;
+  }
+}
+/* Large screens ----------- */
+@media only screen and (min-width: 1441px) {
+  /* Dashboard sideMenu styling starts here */
+  .mainDashboard {
+    width: 100%;
+  }
+
+  #sideMenu {
+    background-color: var(--page-sideMenuColor);
+    width: 20%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+  }
+
+  #sideMenu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 25px 30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #sideMenu fa {
+    color: greenyellow;
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+  }
+
+  nav {
+    padding-top: 80px;
+  }
+  #sideMenu a.active {
+    background-color: var(--page-sideMenu-active);
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+    padding: 25px 30px 15px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  #sideMenu a:hover {
+    background-color: var(--page-sideMenu-active);
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+  }
+  .signout_button {
+    width: 100%;
+    background-color: var(--page-sideMenu-active);
+    padding: 25px 30px 15px 25px;
+    text-align: left;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 1.5%;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .signout_button:hover {
+    border-left: 5px solid var(--page-sideSelectedMenu-active);
+  }
+  /* Dashboard sideMenu styling ends here */
+
+  /* Dashboard Header styling */
+
+  header {
+    width: 80%;
+    background-color: var(--page-header-bgColor);
+    margin-left: 280px;
+    padding: 20px;
+  }
+  /* .header-area {
+    margin-left: 20px;
+  } */
+
+  .header-heading {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: navy;
+  }
+
+  .header-heading h1 {
+    text-align: center;
+  }
+
+  /* Dashboard Header styling ends here */
+
+  #contentArea {
+    margin-left: 280px;
+    padding: 15px;
+  }
+
+  #contentArea .heading {
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--page-heading-txtColor);
+    margin-bottom: 10px;
+    margin-left: 30px;
+  }
+
+  #contentArea p {
+    font-size: 0.9rem;
+    color: var(--page-paragraph-txtColor);
+  }
+
+  /* .dashBoxes {
+    background-color: ;
+  } */
+
+  .dashBoxes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .dashContent {
+    width: 45%;
+    height: 140px;
+    margin-top: 20px;
+    padding: 10px 0 0 15px;
+  }
+
+  .icons {
+    color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
+  .links {
+    text-decoration: none;
+    color: white;
+  }
+
+  .dashContent h1 {
+    padding-top: 40px;
+    font-size: 2.2rem;
+  }
+  /* .dashContent .boxWriteup p {
+    color: white;
+  } */
+  .box1 {
+    background-color: rgb(52, 176, 233);
+    display: flex;
+  }
+  .box2 {
+    background-color: rgb(235, 238, 58);
+    display: flex;
+  }
+  .box3 {
+    background-color: rgb(151, 218, 17);
+    display: flex;
+  }
+  .box4 {
+    background-color: rgb(238, 9, 20);
+    display: flex;
+  }
+}
+
+/* iPhone 5 (portrait & landscape)----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  /* STYLES GO HERE */
+}
+
+/* iPhone 5 (landscape)----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  /* STYLES GO HERE */
+}
+
+/* iPhone 5 (portrait)----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  /* STYLES GO HERE */
 }
