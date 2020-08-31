@@ -29,7 +29,7 @@ if (isset($_POST["login_submit"])) {
                     $_SESSION["usersId"] = $row["idUsers"];
                     $_SESSION["usersUid"] = $row["uidUsers"];
                     
-                    header("Location: ../dash.html?login=success");
+                    header("Location: ../dash.php?login=success");
                     exit();
                 }else {
                     header("Location: ../signIn.php?error=wrongpwd");

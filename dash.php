@@ -126,23 +126,7 @@
     <div class="footerdash"></div>
     <!-- Pop-up form -->
     <div id="adminLoginForm" class="form-popup">
-      <!-- <?php 
-      if(isset($_GET["error"])){
-        if($_GET["error"] == "emptyfields"){
-          echo '
-          <p>Please enter username and password</p>
-          ';
-        }elseif($_GET["error"] == "wrongpwd")
-          echo'
-          <p>Invalid password</p>
-          ';
-        }
-      }elseif(isset["login"]){
-        if($_GET["login"] == "success"){
-          <p>Successful Login</p>
-        }
-      }
-      ?> -->
+    
       <form
         action="includes/admin.inc.php"
         class="form-container"
@@ -185,11 +169,10 @@
           type="submit"
           class="btn login-btn"
           name="submit_login"
-          onclick="adminSubmit(event)"
         >
           Login
         </button>
-        <button type="submit" class="btn cancel" onclick="closeForm()">
+        <button type="button" class="btn cancel" onclick="closeForm()">
           Close
         </button>
       </form>
