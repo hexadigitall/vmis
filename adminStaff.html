@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link rel="stylesheet" href="dash.css" />
+    <link rel="stylesheet" href="clientForm.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="https://fontlibrary.org/face/glacial-indifference"
+      type="text/css"
+    />
+    <script
+      src="https://kit.fontawesome.com/2b9385dd69.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="mainDashboard">
+      <!-- <div class="headerMenu">
+        <h3>VisitLog Manager</h3>
+      </div> -->
+      <div class="Menu">
+        <header>
+          <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+          </div>
+          <div class="header-area">
+            <hi class="header-heading"
+              >VISITORS MANAGEMENT INFORMATION SYSTEM</hi
+            >
+          </div>
+          <!-- <div></div> -->
+        </header>
+        <nav id="sideMenu" style="height: 190vh;">
+          <div class="sideMenu-content">
+            <a href="adminportal.html" class="nav-btn">
+              <b>Home</b></a>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn nav-btn" style="border-left:5px solid #92cf48;">Register</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="adminClient.html"><b>Client</b></a>
+                  <a href="adminStaff.html" class="active"><b>Staff</b></a>
+                </div>
+            </div>
+            <a href="dash.html" class="nav-btn">
+              <b>Logout</b></a>
+              
+          </div>
+        </nav>
+
+        <div id="contentArea">
+          <div class="heading">
+            <h1>Admin Portal</h1>
+            <p>Welcome to TechCreek VMIS</p>
+          </div>
+          <hr />
+          <!-- ADMIN STAFF PAGE -->
+              
+          <!-- staff form start -->
+            <div class="form_top">
+                <div class="option-group">
+                    <h3 id="form_title">STAFF FORM</h3>
+                </div>
+                <!-- <div class="option-group">
+                    <label for="staffSelectionGroup">Staff category:</label>
+                    <select class="optionSelection" id="categorySelectionGroup" name="">
+                      <option>Choose option...</option>
+                      <option value="staff">Staff</option>
+                      <option value="security">Security</option>
+                    </select>
+                  </div> -->
+                </div>
+                <div class="container" id="staffCategory_form">
+                   <div class="row">
+                        <div class="col-md-6">
+                            <div id="my_camera"></div>
+                            <br/>
+                            <input type=button value="Take Snapshot" onClick="take_snapshot()">
+                            <input type="hidden" name="image" class="image-tag">
+                        </div>
+                        <div class="col-md-6">
+                            <div id="results">Your captured image will appear here...</div>
+                        </div>
+                   </div>
+            
+              <!-- Configure a few settings and attach camera -->
+            
+                  <form name="regForm" action="includes/clientReg.inc.php" method="post" onsubmit="return validateForm();">
+                    <div class="form-group" id="firstFieldgroupDiv">
+                      <label for="fname">First Name </label>
+                      <input type="text" name="firstName" placeholder="First Name" required>
+                      <div class="ërror" id="fnameErr"></div>
+                      <label for="lname">Last Name</label>
+                      <input type="text" name="lastName" placeholder="Last Name" required>
+                      <div class="ërror" id="lnameErr"></div>
+                      <label for="oname">Other Names</label>
+                      <input type="text" name="otherName" placeholder="Other Names">
+                      <div class="ërror" id="onameErr"></div>
+                      <br>
+                      <label class="radio_label">Gender</label>
+                      <div class="radio_options" >
+                        <label class="radio_option">Male</label>
+                        <input type="radio" name="gender" value="male" class="radio" required>
+                        <label class="radio_option">Female</label>
+                        <input type="radio" name="gender" value="female" class="radio" required>
+                        <label class="radio_option">Others</label>
+                        <input type="radio" name="gender" value="others" class="radio" required>
+                        <div class="ërror" id="genderErr"></div>
+                      </div>
+                      
+                      <br>
+                      <label>Designation</label>
+                      <input type="number" name="designation" placeholder="Designation" required>
+                      <div class="ërror" id="designationErr"></div>
+                      <label>Phone No.</label>
+                      <input type="number" name="phoneNo" placeholder="Phone No" required>
+                      <div class="ërror" id="phoneNoErr"></div>
+                      <label>Email</label>
+                      <input type="email" name="email" placeholder="Email" required>
+                      <div class="ërror" id="emailErr"></div>
+                      <label>Residence</label>
+                      <input type="text" name="Residence" placeholder="Address" required> 
+                      <div class="ërror" id="residenceErr"></div>
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit" name="registerOpencafe">Register</button>
+                  </form>
+                </div>
+              <!-- staff form end -->
+          
+          
+    </div>
+    <!-- scripts -->
+    <script src="scripts/port.js"></script>
+    <script src="scripts/nameAtt.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/showform.js"></script>
+    <script src="scripts/formValidation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    <script>
+
+         /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content of the SIDE MENU*/
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+
+      // scripts for webcam image capture
+      Webcam.set({
+            width: 200,
+            height: 200,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+      });
+    
+      Webcam.attach( '#my_camera' );
+    
+      function take_snapshot() {
+          Webcam.snap( function(data_uri) {
+             $(".image-tag").val(data_uri);
+             document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+          } );
+      };
+
+    // scripts for changing name attribute on the submit buttton based on the selected option
+
+      // form option selection for lessee and co-working
+      $("#fieldSelectionGroup").change(function() {
+        if ($(this).val() == "yes") {
+           $('#secondFieldgroupDiv').show();
+           $('#secondFieldgroup').attr('required', '');
+           $('#secondFieldgroup').attr('data-error', 'This field is required.');
+         } else {
+           $('#secondFieldgroupDiv').hide();
+           $('#secondFieldgroup').removeAttr('required');
+           $('#secondFieldgroup').removeAttr('data-error');
+        }
+      });
+        
+      $("#fieldSelectionGroup").trigger("change");
+
+      // form students option selection 
+      $("#fieldSelectionGroup").change(function() {
+          if ($(this).val() == "students") {
+            $('#studentFieldgroupDiv').show();
+            $('#programfieldSelectionGroup').attr('required', '');
+            $('#programfieldSelectionGroup').attr('data-error', 'This field is required.');
+          } else {
+            $('#studentFieldgroupDiv').hide();
+            $('#programfieldSelectionGroup').removeAttr('required');
+            $('#programfieldSelectionGroup').removeAttr('data-error');
+          }
+      });
+      $("#fieldSelectionGroup").trigger("change");
+
+      // program type selection for Codegaminator students
+      $("#programfieldSelectionGroup").change(function() {
+          if ($(this).val() == "codegaminators") {
+            $('#codegaminatorFieldgroupDiv').show();
+            $('#coursefieldSelectionGroup').attr('required', '');
+            $('#coursefieldSelectionGroup').attr('data-error', 'This field is required.');
+          } else {
+            $('#codegaminatorFieldgroupDiv').hide();
+            $('coursefieldSelectionGroup').removeAttr('required');
+            $('coursefieldSelectionGroup').removeAttr('data-error');
+          }
+      });
+      $("#programfieldSelectionGroup").trigger("change");
+
+      // program type selection for Codegaminator juniors
+      $("#programfieldSelectionGroup").change(function() {
+          if ($(this).val() == "codegaminator-juniors") {
+            $('#codegaminatorJuniorgroupDiv').show();
+            $('#juniorCourseselectionGroup').attr('required', '');
+            $('#juniorCourseselectionGroup').attr('data-error', 'This field is required.');
+          } else {
+            $('#codegaminatorJuniorgroupDiv').hide();
+            $('juniorCourseselectionGroup').removeAttr('required');
+            $('juniorCourseselectionGroup').removeAttr('data-error');
+          }
+      });
+      $("#programfieldSelectionGroup").trigger("change");
+
+    //   Disabling the back and forward browser button
+      // Disable Browser Back Button
+      // history.pushState(null, null, location.href);
+      // window.onpopstate = function () {
+      //     history.go(1);
+      // };
+
+      let customHistory = [];
+      history.pushState(screenData, window.document.title, "#");
+      customHistory.push({data: screenData, title: window.document.title, location: '#'});
+
+      window.onpopstate = function(e) { 
+      let lastEntry = customHistory.pop();
+      history.pushState(lastEntry.data, lastEntry.title, lastEntry.location);
+        // load the last entry
+        }
+
+      // function preventBack(){window.history.forward();}
+      // setTimeout("preventBack()", 0);
+      // window.onunload=function(){null};
+    </script>
+    <!-- scripts -->
+  </body>
+</html>

@@ -50,13 +50,14 @@ session_start();
       </div>
       <div class="option-group">
         <label for="fieldSelectionGroup">Choose a category:</label>
-        <select class="optionSelection" id="fieldSelectionGroup" name="spaceLocation">
+        <select class="optionSelection" id="fieldSelectionGroup" name="category">
           <option>Choose option...</option>
-          <option name="coWorkingButton" value="yes">Co-Working</option>
-          <option name="lesseeButton" value="yes">Lessee</option>
-          <option name="opencafeButton" value="no">Open Cafe</option>
-          <option name="studentsButton" value="students"> Students</option>
+          <option name="coWorkingButton" value="yes" id="coworkingBtn">Co-Working</option>
+          <option name="lesseeButton" value="yes" id="lesseBtn">Lessee</option>
+          <option name="opencafeButton" value="no" id="opencafeBtn">Open Cafe</option>
+          <option name="studentsButton" value="students" id="studentBtn"> Students</option>
         </select>
+        <div class="ërror" id="whatCategoryErr"></div>
       </div>
     </div>
     <div class="container" id="client_form">
@@ -71,39 +72,49 @@ session_start();
             <div id="results">Your captured image will appear here...</div>
         </div>
     </div>
-      <form name="clients" action="includes/clientReg.inc.php" method="post">
+      <form name="regForm" action="includes/clientReg.inc.php" method="post" onsubmit="return validateForm();">
         <div class="form-group" id="firstFieldgroupDiv">
           <label for="fname">First Name </label>
-          <input type="text" name="firstName" placeholder="First Name">
+          <input type="text" name="firstName" placeholder="First Name" required>
+          <div class="ërror" id="fnameErr"></div>
           <label for="lname">Last Name</label>
-          <input type="text" name="lastName" placeholder="Last Name">
+          <input type="text" name="lastName" placeholder="Last Name" required>
+          <div class="ërror" id="lnameErr"></div>
           <label for="oname">Other Names</label>
-          <input type="text" name="otherName" placeholder="Other Names">
+          <input type="text" name="otherName" placeholder="Other Names" required>
+          <div class="ërror" id="onameErr"></div>
           <br>
           <label class="radio_label">Gender</label>
           <div class="radio_options" >
-            <label class="radio_option">M</label>
-            <input type="radio" name="gender" value="M" class="radio">
-            <label class="radio_option">F</label>
-            <input type="radio" name="gender" value="F" class="radio">
+            <label class="radio_option">Male</label>
+            <input type="radio" name="gender" value="male" class="radio">
+            <label class="radio_option">Female</label>
+            <input type="radio" name="gender" value="female" class="radio">
             <label class="radio_option">Others</label>
             <input type="radio" name="gender" value="others" class="radio">
+            <div class="ërror" id="genderErr"></div>
           </div>
           
           <br>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="email" required>
+          <div class="ërror" id="emailErr"></div>
           <label>Age</label>
-          <input type="number" name="age" placeholder="Age">
+          <input type="number" name="age" placeholder="Age" maxlength="3" required>
+          <div class="ërror" id="ageErr"></div>
           <label>Phone No.</label>
-          <input type="number" name="phoneNo" placeholder="Phone No">
+          <input type="number" name="phoneNo" placeholder="Phone No" required>
+          <div class="ërror" id="phoneNoErr"></div>
           <label>Residence</label>
-          <input type="text" name="Residence" placeholder="Address">
+          <input type="text" name="residence" placeholder="Address" required>
+          <div class="ërror" id="residenceErr"></div>
           <label>Registration Month</label>
-          <input type="date" name="RegMonth" placeholder="Registration Month">
+          <input type="date" name="RegMonth" placeholder="Registration Month" required>
         </div>
         <div class="formGroup" id="studentFieldgroupDiv"> 
           <div class="form-group" id="programFieldgroupDiv">
             <label>Program type</label>
-            <select class="programTypeselection" id="programfieldSelectionGroup" name="spaceLocation">
+            <select class="programTypeselection" id="programfieldSelectionGroup" name="programType">
               <option>Select program type...</option>
               <option value="codegaminators">Codegaminators</option>
               <option value="codegaminator-juniors">Codegaminator-Juniors</option>
@@ -111,6 +122,7 @@ session_start();
               <option value="">Riv-Jobs</option>
               <option value="">Students</option>
             </select>
+            <div class="ërror" id="programCategoryErr"></div>
           </div>
           <div class="form-group" id="codegaminatorFieldgroupDiv">
             <label>Course:</label>
@@ -138,9 +150,11 @@ session_start();
         </div>
         <div class="form-group" id="secondFieldgroupDiv">  
           <label>Business Name</label>
-          <input type="text" name="Biz_Name" placeholder="Business Name">
+          <input type="text" name="biz_Name" placeholder="Business Name">
+          <div class="ërror" id="bizNameErr"></div>
           <label>Business Designation</label>
-          <input type="text" name="Biz_Designation" placeholder="Business Designation">
+          <input type="text" name="biz_Designation" placeholder="Business Designation">
+          <div class="ërror" id="bizDesignationErr"></div>
           <label>Contract Period</label>
           <br>
           <input type="radio" name="contract_period" value="HalfMonth" placeholder="HalfMonth" class="radio">
@@ -150,7 +164,7 @@ session_start();
         </div>
           <br>
           <br>
-          <button type="submit" name="name">Register</button>
+          <button type="submit" name="opencafe_submit" id="btnSubmit">Register</button>
       </form>
     </div>
   <!-- client form end -->
@@ -159,6 +173,7 @@ session_start();
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/showform.js"></script>
+    <script src="scripts/formValidation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     <script>
@@ -182,23 +197,6 @@ session_start();
 
     // scripts for changing name attribute on the submit buttton based on the selected option
 
-      $(document).ready(function() {
-        $("#fieldSelectionGroup").change(function(){
-          if($(this).name()=='coWorkingButton')
-            {
-              $("button[type=submit]").attr('name',"coWorkingReg");
-            }
-            else if($(this).name()=='lesseeButton'){
-              $("button[type=submit]").attr('name',"lesseeReg");
-            }
-            else if($(this).name()=='opencafeButton'){
-              $("button[type=submit]").attr('name',"opencafeReg");
-            }
-            else if($(this).name()=='studentsButton'){
-              $("button[type=submit]").attr('name',"studentsReg");
-            }
-        });
-      });
       // form option selection for lessee and co-working
       $("#fieldSelectionGroup").change(function() {
         if ($(this).val() == "yes") {
@@ -256,6 +254,8 @@ session_start();
       });
       $("#programfieldSelectionGroup").trigger("change");
     </script>
+
+    <script src="scripts/nameAtt.js"></script>
     
     <!-- scripts -->
 </body>
