@@ -84,7 +84,7 @@
                 <i class="fas fa-user fa-6x"></i>
               </div>
               <div class="content-text">
-                <a href="#" class="links"> <h1>Visits</h1></a>
+                <a href="visitLog.php" class="links"> <h1>Visits</h1></a>
                 <p>
                   <b>- Contains Visitors Log.</b>
                 </p>
