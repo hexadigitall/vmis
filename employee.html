@@ -1,0 +1,157 @@
+<!-- <?php
+session_start();
+?>
+
+<?php -->
+        
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Client Form</title>
+  <link rel="stylesheet" href="clientForm.css" />
+  <link href="https://fonts.googleapis.com/css?family=Alef&display=swap" rel="stylesheet">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css" />
+  <script src="https://kit.fontawesome.com/2b9385dd69.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="mainDashboard">
+
+    <div class="Menu">
+      <nav id="sideMenu">
+        <a href="dash.php" class=""><i class="fas fa-home"></i> Dashboard</a>
+        <form action="includes/signout.inc.php" method="POST" class="signout">
+          <button type="submit" name="signout_submit" class="signout_button"><i class="fas fa-sign-out-alt"></i>Sign Out</button>
+        </form>
+    </div>
+
+  </div>
+  </nav>
+  <header>
+    <div class="header-area">
+      <hi class="header-heading">VISITOR MANAGEMENT INFORMATION SYSTEM</hi>
+    </div>
+    </div>
+  </header>
+  <div id="contentArea">
+    <div class="heading">
+      <h1 id="form_title">EMPLOYEE FORM </h1>
+      <p>RIV-TECHCREEK VMIS</p>
+    </div>
+    <hr />
+    <!-- employee form start -->
+    <div class="form_top">
+      <div class="option-group">
+        <h2>Fill in the form </h2>
+      </div>
+      <div class="option-group">
+        <label for="staffSelectionGroup">Staff category:</label>
+        <select class="optionSelection" id="categorySelectionGroup" name="">
+          <option>Choose option...</option>
+          <option value="staff">Staff</option>
+          <option value="security">Security</option>
+        </select>
+      </div>
+    </div>
+    <div class="container" id="staffCategory_form">
+       <div class="row">
+            <div class="col-md-6">
+                <div id="my_camera"></div>
+                <br/>
+                <input type=button value="Take Snapshot" onClick="take_snapshot()">
+                <input type="hidden" name="image" class="image-tag">
+            </div>
+            <div class="col-md-6">
+                <div id="results">Your captured image will appear here...</div>
+            </div>
+       </div>
+
+  <!-- Configure a few settings and attach camera -->
+
+      <form name="regForm" action="includes/clientReg.inc.php" method="post" onsubmit="return validateForm();">
+        <div class="form-group" id="firstFieldgroupDiv">
+          <label for="fname">First Name </label>
+          <input type="text" name="firstName" placeholder="First Name" required>
+          <div class="ërror" id="fnameErr"></div>
+          <label for="lname">Last Name</label>
+          <input type="text" name="lastName" placeholder="Last Name" required>
+          <div class="ërror" id="lnameErr"></div>
+          <label for="oname">Other Names</label>
+          <input type="text" name="otherName" placeholder="Other Names">
+          <div class="ërror" id="onameErr"></div>
+          <br>
+          <label class="radio_label">Gender</label>
+          <div class="radio_options" >
+            <label class="radio_option">Male</label>
+            <input type="radio" name="gender" value="male" class="radio" required>
+            <label class="radio_option">Female</label>
+            <input type="radio" name="gender" value="female" class="radio" required>
+            <label class="radio_option">Others</label>
+            <input type="radio" name="gender" value="others" class="radio" required>
+            <div class="ërror" id="genderErr"></div>
+          </div>
+          
+          <br>
+          <label>Designation</label>
+          <input type="number" name="designation" placeholder="Designation" required>
+          <div class="ërror" id="designationErr"></div>
+          <label>Phone No.</label>
+          <input type="number" name="phoneNo" placeholder="Phone No" required>
+          <div class="ërror" id="phoneNoErr"></div>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="email" required>
+          <div class="ërror" id="emailErr"></div>
+          <label>Residence</label>
+          <input type="text" name="Residence" placeholder="Address" required> 
+          <div class="ërror" id="residenceErr"></div>
+        </div>
+        <br>
+        <br>
+        <button type="submit" name="registerOpencafe">Register</button>
+      </form>
+    </div>
+  <!-- client form end -->
+
+    
+    <!-- scripts -->
+    <script src="scripts/showform.js"></script>
+    <script src="scripts/formValidation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    <script>
+      // scripts for webcam image capture
+        Webcam.set({
+            width: 200,
+            height: 200,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
+    
+        Webcam.attach( '#my_camera' );
+    
+        function take_snapshot() {
+            Webcam.snap( function(data_uri) {
+                $(".image-tag").val(data_uri);
+                document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+            } );
+        }
+
+    </script>
+    
+    <!-- scripts -->
+</body>
+<!-- // <script src="scripts/popups.js"></script> -->
+</html>
+<!-- ';
+        } else {
+          header("Location: ../signIn.php");
+          exit();
+        };
+        ?> -->
+
+
+       

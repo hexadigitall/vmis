@@ -1,0 +1,116 @@
+body {
+    background-image: url(./img/Riv-tech.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .container {
+    margin: 0 auto;
+    width: 70%;
+  }
+  
+  .container .textContent {
+    text-align: center;
+    width: 100%;
+    padding-top: 3%;
+  }
+  .container .textContent .titleText {
+    margin: 0 auto;
+    background-color: #9eb8cd;
+    width: 50%;
+    border: 5px solid #ffffff;
+  }
+  .container .textContent .titleText h1 {
+    color: #ffffff;
+    font-size: 150%;
+    font-family: "GlacialIndifferenceRegular";
+  }
+  .container .textContent .titleText h3 {
+    background-color: #ffffff;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 1pt;
+    font-size: 72%;
+    color: #53af9e;
+    font-family: "GlacialIndifferenceRegular", Arial, sans-serif;
+  }
+  
+  nav {
+    text-align: center;
+    padding-top: 7px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f3f3f3; */
+  }
+  li {
+    display: inline;
+    border-right: 1px solid #bbb;
+  }
+  
+  li:last-child {
+    border-right: none;
+  }
+  
+  li a {
+    padding: 8px;
+    background-color: #bbcfff;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "Alef", sans-serif;
+  }
+  li a:hover {
+    background-color: #111;
+  }
+  
+  li .active {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  li .active:hover {
+    color: #ffffff;
+  }
+.container .section{
+    border: 1px solid black;
+    width: 50%;
+    background: #ffffff;
+    width: 100%;
+    justify-content: center;
+    padding: 0px;
+    margin-top: 3%;
+    height: 200px;
+}
+.container .section .search{
+    margin-top: 3%;
+    text-align: center;
+}
+.container .section .search input, button{
+    height: 30px;
+}
+.container .section .search button{
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+}
+.container .section .search input{
+    width: 30%;
+}
+.container .section .events h1{
+    font-family: "GlacialIndifferenceRegular";
+    margin: 0 auto;
+    text-align: center;
+    align-self: flex-start;
+    padding: 0px;
+    margin-top: 2%;
+    
+}
+.container .section .events span{
+    margin-right: 5px;
+    color: #d60846;
+}
+  
