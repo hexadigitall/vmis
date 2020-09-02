@@ -51,6 +51,8 @@ body {
   text-decoration: none;
   padding: 25px 30px;
   transition: all 0.3s ease-in-out;
+  margin-top: 2%;
+  background-color: var(--page-sideMenu-active);
 }
 
 #sideMenu fa {
@@ -65,7 +67,7 @@ body {
   text-align: left;
   color: #ffffff;
   font-size: 16px;
-  margin-top: 1.5%;
+  margin-top: 2%;
   border: none;
   font-weight: 600;
   letter-spacing: 1px;
@@ -97,16 +99,13 @@ header {
   background-color: var(--page-header-bgColor);
   margin-left: 280px;
   padding: 20px;
+  text-align: center;
 }
 
 .header-heading {
   font-size: 1.4rem;
   font-weight: 400;
   color: navy;
-}
-
-.header-heading h1 {
-  text-align: center;
 }
 
 #contentArea {
@@ -119,6 +118,12 @@ header {
   font-size: 1.2rem;
   color: var(--page-heading-txtColor);
   margin-bottom: 10px;
+  margin: 0 0 10px 15px;
+}
+
+#contentArea p {
+  font-size: 0.9rem;
+  color: var(--page-paragraph-txtColor);
 }
 
 .alert {
@@ -201,11 +206,6 @@ header {
   width: 25px;
 }
 
-#contentArea p {
-  font-size: 0.9rem;
-  color: var(--page-paragraph-txtColor);
-}
-
 /* .dashBoxes {
   background-color: ;
 } */
@@ -257,13 +257,32 @@ header {
 }
 
 .container {
-  margin: 15px;
-  background-color: var(--page-sideMenuColor);
+  margin: 15px 0 0 350px;
+  background-color: #c3d7e7;
   overflow: hidden;
   display: block;
   height: 100%;
   max-width: 900px;
   float: left;
+  /* margin-left: 350px; */
+}
+
+.container .row {
+  display: flex;
+  padding: 0px 13px;
+}
+
+/* Capture webcame image button */
+.container .row input {
+  background-color: #ec1848;
+  padding: 5px;
+  color: white;
+  margin-left: 50px;
+  cursor: pointer;
+}
+.container .captured-img {
+  margin-left: 455px;
+  margin-top: 20px;
 }
 .container form {
   width: 95.5%;
@@ -272,14 +291,18 @@ header {
   font-family: monospace;
 }
 
+.container form .form-space {
+  margin-bottom: 17px;
+}
+
 .container form label {
-  font-size: 11pt;
+  font-size: 14pt;
 }
 
 .container form input,
 textarea {
   width: 100%;
-  padding: 1%;
+  padding: 1.5%;
   border: none;
   font-weight: 600;
   margin: 3px auto;
@@ -300,6 +323,9 @@ textarea {
   border-left: 7px solid var(--page-sideSelectedMenu-active);
 }
 
+.container form textarea::placeholder {
+  font-size: 12pt;
+}
 .container form .radio {
   margin: 1%;
   padding: 0px;
@@ -423,7 +449,7 @@ textarea {
   cursor: pointer;
 }
 
-.btn_update:focus{
+.btn_update:focus {
   outline: none;
   border: none;
 }
@@ -439,15 +465,15 @@ textarea {
 }
 
 #update_visitor_entry {
-  background-color: var(--page-paragraph-txtColor);
+  background-color: #ec1848;
   color: #ffffff;
   font-family: monospace;
   border: none;
   padding: 7px 20px 7px 20px;
   position: absolute;
   outline: none;
-  top: 13%;
-  left: 50%;
+  top: 18%;
+  left: 81%;
   cursor: pointer;
   border-radius: 15px;
 }
