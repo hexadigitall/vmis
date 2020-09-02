@@ -49,7 +49,7 @@
                 <button onclick="myFunction()" class="dropbtn nav-btn">Register</button>
                 <div id="myDropdown" class="dropdown-content">
                   <a href="adminClient.html"><i class="fas fa-users" style="font-size:20px;color:red;"></i><b>Client</b></a>
-                  <a href="adminStaff.html"><b>Staff</b></a>
+                  <a href="adminStaff.html"><i class="fas fa-user-plus" style="font-size:20px;color:red;"></i><b>Staff</b></a>
                 </div>
             </div>
 
@@ -67,21 +67,43 @@
           <hr />
     
           <div class="admin-home">
-              <h3>Quick start<i class="fas fa-users fa-2x" style="font-size:40px;color:red;"></i></h3>
-              <div class="display">
-                <div class="start">
-                  <h4>Set up a Client</h4>
-                  <p>Quickly register a client.</p>
-                </div>
-                <div class="start">
-                    <h4>Manage Staff attendance</h4>
-                    <p>Handle Staff Clock-in and itineraries.</p>
-                </div>
-                <div class="start end">
-                  <h4>Students attendance</h4>
-                  <p>Quickly sign in students and manage students attendance records.</p>
-                </div>
-              </div>
+              <h3>Quick start</h3>
+                <div class="display">
+                  <a href="adminClient.html" style="text-decoration: none; cursor:pointer">  
+                      <div class="start">
+                        <div class="quickstart">
+                          <h4>Register a Client</h4>
+                          <p>Quickly register a client.</p>
+                        </div>
+                        <div style="background-color: red; height: 3rem; width: 15px;">
+                          <i class="far fa-right-angle"></i>
+                        </div>
+                    </div>
+                  </a>
+                  <a href="adminStaff.html" style="text-decoration: none; cursor:pointer">
+                    <div class="start">   
+                      <div class="quickstart">
+                        <h4>Manage Staff attendance</h4>
+                        <p>Handle Staff Clock-in and itineraries.</p>
+                      </div>
+                      <div style="background-color: red; height: 3rem; width: 15px;">
+                        <i class="far fa-right-angle"></i>
+                      </div>
+                    </div>
+                  </a>
+                  
+                  <a href="#" style="text-decoration: none; cursor:pointer">
+                    <div class="start end">
+                      <div class="quickstart">
+                        <h4>Students attendance</h4>
+                        <p>Quickly sign in students and manage students attendance records.</p>
+                      </div>
+                      <div style="background-color: red; height: 3rem; width: 15px;">
+                        <i class="far fa-right-angle"></i>
+                      </div>
+                    </div>
+                  </a>
+               </div>
           </div>
           
     </div>

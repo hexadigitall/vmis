@@ -33,13 +33,13 @@ if (isset($_POST['registerVisitor'])) {
             exit();
         } else {
             $img = $_POST['image'];
-            $folderPath = "upload/";
+            $folderPath = 'upload/';
 
             $image_parts = explode(";base64,", $img);
             $image_type_aux = explode("image/", $image_parts[0]);
-            $image_type = $image_type_aux[1];
+            $image_type = $image_type_aux[0];
 
-            $image_base64 = base64_decode($image_parts[1]);
+            $image_base64 = base64_decode($image_parts[0]);
             $fileName = uniqid() . '.png';
 
             $file = $folderPath . $fileName;

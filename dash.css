@@ -211,6 +211,8 @@ header {
   padding: 10px 5px;
   /* padding: 20px 5px; */
   background-color: white;
+  display: flex;
+  justify-content: space-between;
 }
 .end {
   border-bottom: 0px;
@@ -218,6 +220,7 @@ header {
 .start h4 {
   margin-bottom: 5px;
 }
+
 #contentArea {
   margin-left: 280px;
   padding: 15px;
