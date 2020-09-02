@@ -146,8 +146,24 @@ body {
 
 /* Capture/camera styling */
 .container .row {
+  display: flex;
   margin-left: 20px;
+  padding: 0px 5px;
 }
+
+.container .row input {
+  background-color: #ec1848;
+  padding: 5px;
+  color: white;
+  margin: 0 0 20px 50px;
+  /* margin-left: 50px; */
+  cursor: pointer;
+}
+.container .captured-img {
+  margin-left: 455px;
+  margin-top: 20px;
+}
+
 .container form {
   width: 95.5%;
   /* margin: 1.5%; */
