@@ -1,12 +1,5 @@
-<!-- <?php
-session_start();
-?>
-
-<?php -->
-        
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,7 +48,7 @@ session_start();
           <option name="coWorkingButton" value="yes" id="coworkingBtn">Co-Working</option>
           <option name="lesseeButton" value="yes" id="lesseBtn">Lessee</option>
           <option name="opencafeButton" value="no" id="opencafeBtn">Open Cafe</option>
-          <option name="studentsButton" value="students" id="studentBtn"> Students</option>
+          <option name="studentsButton" value="students" id="studentBtn">Students</option>
         </select>
         <div class="ërror" id="whatCategoryErr"></div>
       </div>
@@ -164,7 +157,7 @@ session_start();
         </div>
           <br>
           <br>
-          <button type="submit" name="opencafe_submit" id="btnSubmit">Register</button>
+          <button type="submit" id="btnSubmit">Register</button>
       </form>
     </div>
   <!-- client form end -->
@@ -172,8 +165,8 @@ session_start();
     
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/showform.js"></script>
-    <script src="scripts/formValidation.js"></script>
+    <!-- <script src="scripts/showform.js"></script> -->
+    <!-- <script src="scripts/formValidation.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     <script>
@@ -253,6 +246,37 @@ session_start();
           }
       });
       $("#programfieldSelectionGroup").trigger("change");
+
+      // Simple changing name attribute of the submit button based on selected options using jQuery
+      $(document).ready(function(){
+        // Function to change the name attribute of the Submit button 
+        $("#fieldSelectionGroup").change(function() {
+          let changeSelected = $(this).children(":selected").text();
+          switch (changeSelected) {
+        case "Co-Working":
+          $("#btnSubmit").prop('name', 'coWorking_submit');
+        break;
+        case "Lessee": 
+          $("#btnSubmit").prop('name', 'lessee_submit');
+        break;
+        case "Open Cafe": 
+          $("#btnSubmit").prop('name', 'opencafe_submit');
+        break;
+        case "Students":
+          $("#btnSubmit").prop('name', 'students_submit');
+        break;
+        default: 
+          $("#btnSubmit").prop('name','#');
+      }
+        });
+        // Function For Back Button
+        $(".back").click(function() {
+        parent.history.back();
+        return false;
+        })
+      });
+
+      
     </script>
 
     <script src="scripts/nameAtt.js"></script>
@@ -261,9 +285,3 @@ session_start();
 </body>
 <!-- // <script src="scripts/popups.js"></script> -->
 </html>
-<!-- ';
-        } else {
-          header("Location: ../signIn.php");
-          exit();
-        };
-        ?> -->
