@@ -100,8 +100,7 @@
                 </a>
                 <p>
                   <b
-                    >- Show the Administrations panel - containing settings and
-                    options.</b
+                    >- Show the Administrations panel.</b
                   >
                 </p>
 

@@ -17,13 +17,17 @@ body {
   font-size: 11pt;
   top: 12%;
   font-family: monospace;
-  left: 70%;
-  display: flex;
+  left: 50%;
+  display: none;
   justify-content: space-between;
   z-index: 1;
   opacity: 1;
   align-content: center;
   border-left: 10px solid var(--page-sideSelectedMenu-active);
+}
+
+#clientRegAlert {
+  display: none;
 }
 
 .disappear {
@@ -183,9 +187,10 @@ textarea {
   height: 40px;
   padding: 1%;
   border: none;
+  border-radius: 10px;
   font-weight: 600;
-  margin: 3px auto;
-  margin-bottom: 10px;
+  margin: 2px auto 13px auto;
+  /* margin-bottom: 5px; */
   background-color: #fff;
   transition: 0.2s ease-in;
   color: #000;
@@ -206,7 +211,7 @@ textarea {
 } */
 
 .container form .radio_options {
-  width: 300px;
+  width: 450px;
   margin: 5px;
 }
 .container form .radio {
@@ -236,9 +241,9 @@ form .formGroup .programTypeselection,
   font-family: sans-serif;
   line-height: 1.3;
   margin: 0;
-  border: 1px solid #aaa;
+  border: none;
   box-sizing: border-box;
-  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
   border-radius: 0.5em;
   background-color: #fff;
   color: #444;
@@ -246,7 +251,7 @@ form .formGroup .programTypeselection,
 }
 
 form .formGroup option {
-  background: rgb(174, 203, 230);
+  background: #dcf0fa;
   color: #000;
   text-transform: uppercase;
 }
