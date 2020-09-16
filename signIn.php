@@ -22,7 +22,7 @@ session_start();
       <div class="titleText">
         <h1>RIV-TECHCREEK VMIS</h1>
         <div class="subText">
-          <h3>VISITOR MANAGEMENT INFORMATION SYSTEM</h3>
+          <h3>VISITORS' MANAGEMENT INFORMATION SYSTEM</h3>
         </div>
       </div>
     </div>

@@ -1,0 +1,135 @@
+body {
+  background-image: url(./img/Riv-tech.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.container .textContent {
+  text-align: center;
+  width: 100%;
+  padding-top: 3%;
+}
+.container .textContent .titleText {
+  margin: 0 auto;
+  background-color: #9eb8cd;
+  width: 50%;
+  border: 5px solid #ffffff;
+}
+.container .textContent .titleText h1 {
+  color: #ffffff;
+  font-size: 150%;
+  font-family: "GlacialIndifferenceRegular";
+}
+.container .textContent .titleText h3 {
+  background-color: #ffffff;
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 1pt;
+  font-size: 72%;
+  color: #53af9e;
+  font-family: "GlacialIndifferenceRegular", Arial, sans-serif;
+}
+
+nav {
+  text-align: center;
+  padding-top: 7px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* background-color: #f3f3f3; */
+}
+li {
+  display: inline;
+  border-right: 1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  padding: 8px;
+  background-color: #bbcfff;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Alef", sans-serif;
+}
+li a:hover {
+  background-color: #111;
+}
+
+li .active {
+  background-color: #ffffff;
+  color: #000000;
+}
+li .active:hover {
+  color: #ffffff;
+}
+.container form {
+  width: 40%;
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 3%;
+  text-align: left;
+}
+.container form label {
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  font-size: 10pt;
+}
+.container form input {
+  width: 100%;
+  background-color: #afadad;
+  border: none;
+  padding: 2%;
+  border-radius: 5px;
+}
+.container form .register {
+  background-color: #15b2d1;
+  color: #ffffff;
+  height: 30px;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 4%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container form .register:hover {
+  color: white;
+  background-color: black;
+}
+.error {
+  color: #970303;
+  font-size: 8pt;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#alert_successful_signup{
+  position: fixed;
+  z-index: 7;
+  width: 400px;
+}
+
+.img_container{
+  width: 300px;
+}
+.img_container img{
+  width: 20px;
+}
+.border{
+  border: 1px solid red;
+}

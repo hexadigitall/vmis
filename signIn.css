@@ -1,24 +1,30 @@
 body {
-  background-image: url(./img/Riv-tech.jpg);
-  background-repeat: no-repeat;
+  background: linear-gradient(-45deg, #61045f  15%, rgb(14, 38, 136) 100%, transparent),
+  repeating-linear-gradient(45deg, #3ca549 0%, #3ca549 5%, transparent 5%, transparent 10%),
+  #4a569d repeating-linear-gradient(-45deg, #514a9d 0%, #514a9d 5%, transparent 5%, transparent 10%);
+  color: #fff;
+  widows: 100%;
+  height: 100vh;
   background-size: cover;
+  margin: 0;
 }
 
 .container {
   margin: 0 auto;
-  width: 100%;
+  width: 70%;
 }
 
 .container .textContent {
   text-align: center;
-  padding: 5% 0 10px;
   width: 100%;
+  padding-top: 3%;
 }
 .container .textContent .titleText {
-  margin: 0 auto;
-  background-color: #9eb8cd;
-  width: 50%;
-  border: 5px solid #ffffff;
+   margin: 0 auto;
+  width: 80%;
+  border: 2px solid #6128be;
+  border-radius: 8px;
+  padding: 50px;
 }
 .container .textContent .titleText h1 {
   color: #ffffff;
@@ -26,12 +32,12 @@ body {
   font-family: "GlacialIndifferenceRegular";
 }
 .container .textContent .titleText h3 {
-  background-color: #ffffff;
   width: 60%;
   margin: 0 auto;
-  padding: 10px;
+  padding: 5px;
   border-radius: 1pt;
-  font-size: 72%;
+  font-size: 90%;
+  letter-spacing: 5px;
   color: #53af9e;
   font-family: "GlacialIndifferenceRegular", Arial, sans-serif;
 }
@@ -78,12 +84,13 @@ li .active:hover {
   display: flex;
   justify-content: center;
 }
+
 .container .acct_box form {
-  width: 18%;
+  width: 40%;
   background-color: #ffffff;
-  margin: 5px;
+  margin: 0 auto;
   padding: 3%;
-  margin-top: 3%;
+  margin-top: 2%;
   border-radius: 7px;
 }
 .container .acct_box form h1{
