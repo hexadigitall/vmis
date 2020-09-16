@@ -2,15 +2,15 @@
 
 // lesse form submission script start here !//
 
-if (isset($_POST["lesse_submit"])){
+if (isset($_POST["lessee_submit"])){
     require 'dbconnect.php';
-    $firstName = $_POST['fname'];
-    $lastName = $_POST['lname'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
     $otherName = $_POST['otherName'];
     $age = $_POST['age'];
     $phoneNo = $_POST['phoneNo'];
     $residence = $_POST['residence'];
-    $regMonth = $_POST['regMonth'];
+    $regMonth = $_POST['RegMonth'];
     $businessName = $_POST['biz_Name'];
     $businessDesignation = $_POST['biz_Designation'];
     $contractPeriod = $_POST['contract_period'];
@@ -19,18 +19,17 @@ if (isset($_POST["lesse_submit"])){
     $course = $_POST['course'];
 
     if(empty($firstName) || empty($lastName) || empty($age) || empty($phoneNo) || empty($residence) || empty($regMonth) || empty($contractPeriod) || empty($residence) || empty($gender) || empty($businessDesignation) || empty($businessName) ){
-        header("Location: ../clientForm.php?error=emptyfeild");
+        header("Location: ../adminClient.html?error=emptyfeild");
         exit();
     }else{
 
         $sql = "INSERT INTO lesse_db (firstName, lastName, others, gender, age, phoneNo, residence, regDate, bizName, bizDesignation, contractPeriod) 
-        VALUES ('$firstName','$lastName', '$otherName', '$age', '$phoneNo', '$residence', CURDATE(), '$businessName', '$businessDesignation', '$contractPeriod')";
+        VALUES ('$firstName','$lastName', '$otherName', '$gender', '$age', '$phoneNo', '$residence', CURDATE(), '$businessName', '$businessDesignation', '$contractPeriod')";
             $query = mysqli_query($conn, $sql);
         if ($query) {
-            header("Location: ../clientForm.php?visitorentry=successful");
-            exit();
+            header("Location: ../adminClient.html?lessevisitorentry=successful");
         } else {
-            header("Location: ../clientForm.php?error=unsuccessfulregistration");
+            header("Location: ../adminClient.html?lesseerror=unsuccessfulregistration");
             exit();
         }
     }
@@ -40,15 +39,15 @@ if (isset($_POST["lesse_submit"])){
 
 //cowork submssion form starts here //
 
-if (isset($_POST["cowork_submit"])){
+if (isset($_POST["coWorking_submit"])){
     require 'dbconnect.php';
-    $firstName = $_POST['fname'];
-    $lastName = $_POST['lname'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
     $otherName = $_POST['otherName'];
     $age = $_POST['age'];
     $phoneNo = $_POST['phoneNo'];
     $residence = $_POST['residence'];
-    $regMonth = $_POST['regMonth'];
+    $regMonth = $_POST['RegMonth'];
     $businessName = $_POST['biz_Name'];
     $businessDesignation = $_POST['biz_Designation'];
     $contractPeriod = $_POST['contract_period'];
@@ -57,18 +56,18 @@ if (isset($_POST["cowork_submit"])){
     $course = $_POST['course'];
 
     if(empty($firstName) || empty($lastName) || empty($age) || empty($phoneNo) || empty($residence) || empty($regMonth) || empty($contractPeriod) || empty($residence) || empty($gender) || empty($businessDesignation) || empty($businessName) ){
-        header("Location: ../clientForm.php?error=emptyfeild");
+        header("Location: ../adminClient.html?error=emptyfeild");
         exit();
     }else{
 
         $sql = "INSERT INTO cowork_db (firstName, lastName, others, gender, age, phoneNo, residence, regDate, bizName, bizDesignation, contractPeriod) 
-        VALUES ('$firstName','$lastName', '$otherName', '$age', '$phoneNo', '$residence', CURDATE(), '$businessName', '$businessDesignation', '$contractPeriod')";
+        VALUES ('$firstName','$lastName', '$otherName', '$age', '$gender', '$phoneNo', '$residence', CURDATE(), '$businessName', '$businessDesignation', '$contractPeriod')";
             $query = mysqli_query($conn, $sql);
         if ($query) {
-            header("Location: ../clientForm.php?visitorentry=successful");
+            header("Location: ../adminClient.html?lessevisitorentry=successful");
             exit();
         } else {
-            header("Location: ../clientForm.php?error=unsuccessfulregistration");
+            header("Location: ../adminClient.html?coworkingerror=unsuccessfulregistration");
             exit();
         }
     }
@@ -80,13 +79,13 @@ if (isset($_POST["cowork_submit"])){
 
 if (isset($_POST["opencafe_submit"])){
     require 'dbconnect.php';
-    $firstName = $_POST['fname'];
-    $lastName = $_POST['lname'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
     $otherName = $_POST['otherName'];
     $age = $_POST['age'];
     $phoneNo = $_POST['phoneNo'];
     $residence = $_POST['residence'];
-    $regMonth = $_POST['regMonth'];
+    $regMonth = $_POST['RegMonth'];
     $businessName = $_POST['biz_Name'];
     $businessDesignation = $_POST['biz_Designation'];
     $contractPeriod = $_POST['contract_period'];
@@ -95,18 +94,18 @@ if (isset($_POST["opencafe_submit"])){
     $course = $_POST['course'];
 
     if(empty($firstName) || empty($lastName) || empty($age) || empty($phoneNo) || empty($residence) || empty($regMonth) || empty($contractPeriod) || empty($residence) || empty($gender) || empty($businessDesignation) || empty($businessName) ){
-        header("Location: ../clientForm.php?error=emptyfeild");
+        header("Location: ../adminClient.html?error=emptyfeild");
         exit();
     }else{
 
         $sql = "INSERT INTO opencafe_db (firstName, lastName, others, gender, age, phoneNo, residence, regDate) 
-        VALUES ('$firstName','$lastName', '$otherName', '$age', '$phoneNo', '$residence', CURDATE())";
+        VALUES ('$firstName','$lastName', '$otherName', '$gender' '$age', '$phoneNo', '$residence', CURDATE())";
             $query = mysqli_query($conn, $sql);
         if ($query) {
-            header("Location: ../clientForm.php?visitorentry=successful");
+            header("Location: ../adminClient.html?lessevisitorentry=successful");
             exit();
         } else {
-            header("Location: ../clientForm.php?error=unsuccessfulregistration");
+            header("Location: ../adminClient.html?opencafeerror=unsuccessfulregistration");
             exit();
         }
     }

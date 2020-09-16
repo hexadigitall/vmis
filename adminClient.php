@@ -21,8 +21,6 @@
       src="https://kit.fontawesome.com/2b9385dd69.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="css/css/alertify.min.css">
-    <link rel="stylesheet" href="css/css/themes/default.min.css">
   </head>
   <body>
     <div class="mainDashboard">
@@ -73,7 +71,6 @@
                 <div class="option-group">
                     <h3 id="form_title">CLIENTS FORM </h3>
                 </div>
-                
                 <div class="option-group">
                     <label for="fieldSelectionGroup">Choose a category:</label>
                     <select class="optionSelection" id="fieldSelectionGroup" name="category">
@@ -97,10 +94,6 @@
                     <div class="captured-img">
                         <div id="results">Your captured image will appear here...</div>
                     </div>
-                    <div class="col-md-12 text-center">
-                      <br/>
-                      <button class="btn btn-success">Submit</button>
-                  </div>
                 </div>
                 <form name="regForm" action="includes/clientReg.inc.php" method="post" onsubmit="return validateForm();">
                     <div class="form-group" id="firstFieldgroupDiv">
@@ -206,9 +199,7 @@
           
           
     </div>
-   
     <!-- scripts -->
-    <script src="css/alertify.min.js"></script>
     <script src="scripts/port.js"></script>
     <script src="scripts/nameAtt.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -216,7 +207,6 @@
     <script src="scripts/formValidation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
-    <!-- <script type="text/javascript" src="webcam/webcamjs/webcam.min.js"></script> -->
     <script>
 
     /* When the user clicks on the button,
@@ -352,33 +342,20 @@
       //     history.go(1);
       // };
 
-      // let customHistory = [];
-      // history.pushState(screenData, window.document.title, "#");
-      // customHistory.push({data: screenData, title: window.document.title, location: '#'});
+      let customHistory = [];
+      history.pushState(screenData, window.document.title, "#");
+      customHistory.push({data: screenData, title: window.document.title, location: '#'});
 
-      // window.onpopstate = function(e) { 
-      // let lastEntry = customHistory.pop();
-      // history.pushState(lastEntry.data, lastEntry.title, lastEntry.location);
-      //   // load the last entry
-      //   }
+      window.onpopstate = function(e) { 
+      let lastEntry = customHistory.pop();
+      history.pushState(lastEntry.data, lastEntry.title, lastEntry.location);
+        // load the last entry
+        }
 
       // function preventBack(){window.history.forward();}
       // setTimeout("preventBack()", 0);
       // window.onunload=function(){null};
-
-      //alerts on form registration 
-        var lesseAlert = "http://localhost/vmis/adminClient.html?lessevisitorentry=successful";
-
-        if (lesseAlert == window.location.href){
-          alertify.set('notifier','position', 'top-center');
-           alertify.success('Registration Successful');
-        } else{
-          alertify.alert('Fill in the empty feilds').set('frameless', true);
-        }
-      
     </script>
     <!-- scripts -->
-
-
   </body>
 </html>

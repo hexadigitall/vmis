@@ -12,7 +12,7 @@ function validateForm() {
   let gender = document.form.regForm.value;
   let age = document.forms["regForm"]["age"];
   let phone = document.forms["regForm"]["phoneNo"];
-  let email = document.forms["regForm"]["EMail"];
+  let emailId = document.forms["regForm"]["EMail"];
   let residence = document.forms["regForm"]["residence"];
   let whatCategory = document.forms["regForm"]["category"];
   let bizName = document.forms["regForm"]["biz_Name"];
@@ -48,6 +48,23 @@ function validateForm() {
     }
   }
 
+  // Radio option for gender validation
+  let genders = document.getElementsByName("gender");
+  if (genders[0].checked == true) {
+    text = "your gender is male";
+  } else if (genders[1].checked == true) {
+    text = "your gender is female";
+  } else if (genders[2].checked == true) {
+    text = "your gender is others";
+  } else {
+    let msg = '<span style="color:red;"> You must select your gender!</span>';
+    document.getElementById("genderErr").innerHTML = msg;
+    return false;
+  }
+  function reset_msg() {
+    document.getElementById("genderErr").innerHTML = "";
+  }
+
   // Validate gender
   if (gender == "") {
     printError("genderErr", "Please select your gender");
@@ -78,17 +95,17 @@ function validateForm() {
   }
 
   // Validate email
-  if (email.value == "") {
+  if (emailId.value == "") {
     printError("emailErr", "Please enter your email address");
   } else {
     // Regular expression for basic email validation
     var regex = /^\S+@\S+\.\S+$/;
-    if (regex.test(email) === false) {
+    if (regex.test(emailId === false) {
       printError("emailErr", "Please enter a valid email address");
     }
     // atpos = emailID.indexOf("@");
     // dotpos = emailID.lastIndexOf(".");
-    // else if (atpos < 1 || ( dotpos - atpos < 2 )) {
+    // if (atpos < 1 || ( dotpos - atpos < 2 )) {
     //     printError("emailErr", "Please enter a valid email address");
     // }
     else {
